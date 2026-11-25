@@ -5,7 +5,7 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-25T05:09:47.700Z"
+    "atualizadoEm": "2026-11-25T11:32:15.600Z"
   },
   "destaques": [
     {
@@ -156,14 +156,9 @@
       "categoria": "unica",
       "naipe": "masculino",
       "fonte": "Boletim 01, p. 3",
-      "status": "divulgado",
-      "podio": {
-        "ouro": "gilberto-mestrinho",
-        "prata": "luis-alberto",
-        "bronze": "menino-jesus"
-      },
-      "observacao": "A ficha com nome masculino repete o cabeçalho feminino. O Boletim 01 confirma a disputa masculina.",
-      "divulgadoEm": "2026-11-25T05:09:47.700Z"
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "A ficha com nome masculino repete o cabeçalho feminino. O Boletim 01 confirma a disputa masculina."
     },
     {
       "id": "volei-praia-infantil-feminino",
@@ -418,24 +413,15 @@
       "podio": null
     },
     {
-      "id": "atletismo-4x100-juvenil-feminino",
+      "id": "atletismo-4x100-juvenil-misto",
       "modalidadeId": "atletismo",
       "nome": "Revezamento 4×100 m",
       "categoria": "juvenil",
-      "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Revezamento 4×100 m juvenil",
+      "naipe": "misto",
+      "fonte": "Regulamento VIII JERPE 2026 — Art. 27, alínea a",
       "status": "aguardando",
-      "podio": null
-    },
-    {
-      "id": "atletismo-4x100-juvenil-masculino",
-      "modalidadeId": "atletismo",
-      "nome": "Revezamento 4×100 m",
-      "categoria": "juvenil",
-      "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Revezamento 4×100 m juvenil",
-      "status": "aguardando",
-      "podio": null
+      "podio": null,
+      "observacao": "Disputa mista confirmada pelo responsável pelo painel conforme Art. 27. Fichas anteriores apresentavam divergência de naipe."
     },
     {
       "id": "atletismo-4x80-infantil-misto",
@@ -443,10 +429,10 @@
       "nome": "Revezamento 4×80 m",
       "categoria": "infantil",
       "naipe": "misto",
-      "fonte": "Ficha de inscrição",
-      "status": "a-confirmar",
+      "fonte": "Regulamento VIII JERPE 2026 — Art. 27, alínea a; ficha de inscrição",
+      "status": "aguardando",
       "podio": null,
-      "observacao": "O nome do arquivo indica 4×80 m infantil misto. O cabeçalho indica 4×100 m juvenil."
+      "observacao": "Disputa mista confirmada pelo responsável pelo painel conforme Art. 27. A ficha anterior apresentava cabeçalho divergente."
     },
     {
       "id": "xadrez-infantil-feminino",
