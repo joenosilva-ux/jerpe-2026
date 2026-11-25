@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Medalhas, pódios, jogos em destaque e cenários dos Jogos Escolares de Rio Preto da Eva.">
+  <meta name="theme-color" content="#101a32">
+  <title>VIII JERPE 2026 | Quadro de medalhas</title>
+  <link rel="icon" href="./imagens/identidade/jerpe-2026.png">
+  <link rel="stylesheet" href="./css/site.css">
+  <script type="module" src="./js/painel.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topo">
+    <div class="largura barra">
+      <a class="marca" href="./" aria-label="JERPE 2026, início">
+        <img src="./imagens/identidade/jerpe-2026.png" alt="" width="354" height="303">
+        <span><strong>VIII JERPE 2026</strong><small>Rio Preto da Eva · AM</small></span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#medalhas">Medalhas</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#podios">Pódios</a>
+        <a href="#simulador">Simular</a>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" class="largura">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="hero-texto">
+        <p class="sobretitulo">Jogos Escolares de Rio Preto da Eva</p>
+        <h1 id="titulo">Quadro de<br>medalhas</h1>
+        <p class="slogan">O Esporte começa na Escola.</p>
+      </div>
+      <dl class="resumo" id="resumo" hidden>
+        <div><dt>Escolas</dt><dd id="total-escolas"></dd></div>
+        <div><dt>Disputas confirmadas</dt><dd id="total-confirmadas"></dd></div>
+        <div><dt>Pódios divulgados</dt><dd id="total-podios"></dd></div>
+      </dl>
+    </section>
+    <p class="aviso" id="carregamento" role="status">Carregando o campeonato…</p>
+    <noscript><p class="aviso">Ative o JavaScript para consultar os pódios.</p></noscript>
+    <div id="painel" hidden>
+      <div class="grade">
+        <section id="medalhas" class="cartao" aria-labelledby="titulo-medalhas">
+          <div class="secao-cabecalho">
+            <h2 id="titulo-medalhas">Classificação geral</h2>
+            <p id="criterio"></p>
+          </div>
+          <table>
+            <caption class="visualmente-oculto">Quadro de medalhas por escola</caption>
+            <thead><tr>
+              <th scope="col">Pos.</th><th scope="col">Escola</th>
+              <th scope="col" class="ouro">Ouro</th><th scope="col" class="prata">Prata</th>
+              <th scope="col" class="bronze">Bronze</th><th scope="col">Total</th>
+            </tr></thead>
+            <tbody id="classificacao"></tbody>
+          </table>
+          <p class="nota" id="nota-classificacao"></p>
+        </section>
+        <section class="cartao recentes" aria-labelledby="titulo-recentes">
+          <div class="secao-cabecalho"><h2 id="titulo-recentes">Pódios recentes</h2></div>
+          <div id="recentes"></div>
+          <a class="link-podios" href="#podios">Consultar todas as disputas</a>
+        </section>
+      </div>
+      <section id="jogos" class="cartao catalogo" aria-labelledby="titulo-jogos">
+        <div class="secao-cabecalho">
+          <h2 id="titulo-jogos">Jogos em destaque</h2>
+          <p>Confrontos selecionados da programação do JERPE.</p>
+        </div>
+        <div class="lista-jogos">
+          <div>
+            <h3>Próximos destaques</h3>
+            <div id="jogos-proximos" class="grupo-jogos"></div>
+          </div>
+          <div>
+            <h3>Resultados recentes</h3>
+            <div id="jogos-resultados" class="grupo-jogos"></div>
+          </div>
+          <div id="jogos-sem-resultado" hidden>
+            <h3>Aguardando resultado</h3>
+            <div id="jogos-pendentes" class="grupo-jogos"></div>
+          </div>
+        </div>
+      </section>
+      <section id="simulador" class="cartao catalogo" aria-labelledby="titulo-simulador">
+        <div class="secao-cabecalho">
+          <h2 id="titulo-simulador">Simulador de medalhas</h2>
+          <p>Adicione medalhas a uma escola e veja como ficaria a classificação. O cenário é hipotético e só aparece no seu navegador.</p>
+        </div>
+        <form id="form-simulacao" class="form-simulacao">
+          <label>Escola<select name="escola" id="escola-simulacao" required><option value="">Selecione uma escola</option></select></label>
+          <fieldset>
+            <legend>Medalhas a acrescentar</legend>
+            <div class="campos-podio">
+              <label class="ouro">Ouro<input type="number" inputmode="numeric" name="ouro" min="0" max="999" step="1" value="1"></label>
+              <label class="prata">Prata<input type="number" inputmode="numeric" name="prata" min="0" max="999" step="1" value="0"></label>
+              <label class="bronze">Bronze<input type="number" inputmode="numeric" name="bronze" min="0" max="999" step="1" value="0"></label>
+            </div>
+          </fieldset>
+          <div class="acoes">
+            <button class="principal" type="submit">Simular cenário</button>
+            <button type="reset">Limpar cenário</button>
+          </div>
+        </form>
+        <p id="resumo-simulacao" class="nota" role="status"></p>
+        <table id="quadro-simulacao" hidden>
+          <caption>Classificação simulada</caption>
+          <thead><tr>
+            <th scope="col">Pos.</th><th scope="col">Escola</th>
+            <th scope="col" class="ouro">Ouro</th><th scope="col" class="prata">Prata</th>
+            <th scope="col" class="bronze">Bronze</th><th scope="col">Total</th>
+          </tr></thead>
+          <tbody id="linhas-simulacao"></tbody>
+        </table>
+      </section>
+      <section id="podios" class="cartao catalogo" aria-labelledby="titulo-podios">
+        <div class="secao-cabecalho">
+          <h2 id="titulo-podios">Pódios por disputa</h2>
+          <p id="nota-disputas"></p>
+        </div>
+        <form id="filtros" class="filtros">
+          <label>Modalidade<select name="modalidade" id="modalidade"><option value="">Todas</option></select></label>
+          <label>Escola medalhista<select name="escola" id="escola"><option value="">Todas</option></select></label>
+          <label>Situação<select name="status" id="situacao"><option value="">Todas</option></select></label>
+          <button type="reset" class="secundario">Limpar filtros</button>
+        </form>
+        <p id="contagem" class="contagem" role="status"></p>
+        <div id="disputas" class="lista-disputas"></div>
+      </section>
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="largura">
+      <p>Painel independente de acompanhamento do JERPE</p>
+      <p id="atualizacao"></p>
+    </div>
+  </footer>
+</body>
+</html>

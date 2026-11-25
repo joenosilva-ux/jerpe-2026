@@ -1,0 +1,531 @@
+{
+  "versao": 1,
+  "edicao": {
+    "nome": "VIII JERPE",
+    "ano": 2026,
+    "local": "Rio Preto da Eva · AM",
+    "fuso": "America/Manaus",
+    "atualizadoEm": "2026-11-25T03:47:05.871Z"
+  },
+  "destaques": [
+    {
+      "id": "praia-infantil-feminino-final",
+      "competicaoId": "volei-praia-infantil-feminino",
+      "etapa": "Final",
+      "escolaA": "luis-alberto",
+      "escolaB": "menino-jesus"
+    },
+    {
+      "id": "praia-infantil-masculino-semifinal",
+      "competicaoId": "volei-praia-infantil-masculino",
+      "etapa": "Semifinal",
+      "escolaA": "menino-jesus",
+      "escolaB": "luis-alberto"
+    },
+    {
+      "id": "praia-infantil-masculino-final",
+      "competicaoId": "volei-praia-infantil-masculino",
+      "etapa": "Final",
+      "escolaA": "ivanilde-braga",
+      "escolaB": null
+    }
+  ],
+  "regras": {
+    "classificacao": "olimpica",
+    "provisoria": true
+  },
+  "escolas": [
+    {
+      "id": "luis-alberto",
+      "nome": "Luís Alberto Carvalho Castelo"
+    },
+    {
+      "id": "menino-jesus",
+      "nome": "Menino Jesus"
+    },
+    {
+      "id": "ivanilde-braga",
+      "nome": "Ivanilde Braga"
+    },
+    {
+      "id": "alegria-de-saber",
+      "nome": "Alegria de Saber"
+    },
+    {
+      "id": "gilberto-mestrinho",
+      "nome": "Gilberto Mestrinho"
+    },
+    {
+      "id": "luiz-fernando",
+      "nome": "Luiz Fernando"
+    }
+  ],
+  "modalidades": [
+    {
+      "id": "futsal",
+      "nome": "Futsal",
+      "tipo": "coletiva"
+    },
+    {
+      "id": "volei",
+      "nome": "Vôlei de quadra",
+      "tipo": "coletiva"
+    },
+    {
+      "id": "handebol",
+      "nome": "Handebol",
+      "tipo": "coletiva"
+    },
+    {
+      "id": "volei-praia",
+      "nome": "Vôlei de praia",
+      "tipo": "coletiva"
+    },
+    {
+      "id": "atletismo",
+      "nome": "Atletismo",
+      "tipo": "individual"
+    },
+    {
+      "id": "xadrez",
+      "nome": "Xadrez",
+      "tipo": "individual"
+    },
+    {
+      "id": "tenis-mesa",
+      "nome": "Tênis de mesa",
+      "tipo": "individual"
+    }
+  ],
+  "competicoes": [
+    {
+      "id": "futsal-unica-masculino",
+      "modalidadeId": "futsal",
+      "nome": "Futsal",
+      "categoria": "unica",
+      "naipe": "masculino",
+      "fonte": "Boletim 01, p. 1",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "futsal-unica-feminino",
+      "modalidadeId": "futsal",
+      "nome": "Futsal",
+      "categoria": "unica",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Futsal feminino",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Cadastro confirmado pela ficha. A programação e os confrontos ainda não constam no Boletim 01."
+    },
+    {
+      "id": "volei-unica-feminino",
+      "modalidadeId": "volei",
+      "nome": "Vôlei de quadra",
+      "categoria": "unica",
+      "naipe": "feminino",
+      "fonte": "Boletim 01, p. 2",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "volei-unica-masculino",
+      "modalidadeId": "volei",
+      "nome": "Vôlei de quadra",
+      "categoria": "unica",
+      "naipe": "masculino",
+      "fonte": "Boletim 01, p. 2",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "handebol-unica-feminino",
+      "modalidadeId": "handebol",
+      "nome": "Handebol",
+      "categoria": "unica",
+      "naipe": "feminino",
+      "fonte": "Boletim 01, p. 2",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "handebol-unica-masculino",
+      "modalidadeId": "handebol",
+      "nome": "Handebol",
+      "categoria": "unica",
+      "naipe": "masculino",
+      "fonte": "Boletim 01, p. 3",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "A ficha com nome masculino repete o cabeçalho feminino. O Boletim 01 confirma a disputa masculina."
+    },
+    {
+      "id": "volei-praia-infantil-feminino",
+      "modalidadeId": "volei-praia",
+      "nome": "Vôlei de praia",
+      "categoria": "infantil",
+      "naipe": "feminino",
+      "fonte": "Boletim 01, p. 4",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "volei-praia-infantil-masculino",
+      "modalidadeId": "volei-praia",
+      "nome": "Vôlei de praia",
+      "categoria": "infantil",
+      "naipe": "masculino",
+      "fonte": "Boletim 01, p. 4",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "volei-praia-juvenil-feminino",
+      "modalidadeId": "volei-praia",
+      "nome": "Vôlei de praia",
+      "categoria": "juvenil",
+      "naipe": "feminino",
+      "fonte": "Boletim 01, p. 3",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "volei-praia-juvenil-masculino",
+      "modalidadeId": "volei-praia",
+      "nome": "Vôlei de praia",
+      "categoria": "juvenil",
+      "naipe": "masculino",
+      "fonte": "Boletim 01, p. 3",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-80m-infantil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "80 m",
+      "categoria": "infantil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Corridas infantil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-80m-infantil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "80 m",
+      "categoria": "infantil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Corridas infantil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-150m-infantil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "150 m",
+      "categoria": "infantil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Corridas infantil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-150m-infantil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "150 m",
+      "categoria": "infantil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Corridas infantil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-200m-infantil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "200 m",
+      "categoria": "infantil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Corridas infantil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-200m-infantil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "200 m",
+      "categoria": "infantil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Corridas infantil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-salto-infantil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "Salto em distância",
+      "categoria": "infantil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Salto em distância infantil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-salto-infantil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "Salto em distância",
+      "categoria": "infantil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Salto em distância infantil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-dardo-infantil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "Lançamento de dardo",
+      "categoria": "infantil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Lançamento de dardo infantil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-dardo-infantil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "Lançamento de dardo",
+      "categoria": "infantil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Lançamento de dardo infantil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-100m-juvenil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "100 m",
+      "categoria": "juvenil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-100m-juvenil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "100 m",
+      "categoria": "juvenil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-200m-juvenil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "200 m",
+      "categoria": "juvenil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-200m-juvenil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "200 m",
+      "categoria": "juvenil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-400m-juvenil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "400 m",
+      "categoria": "juvenil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-400m-juvenil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "400 m",
+      "categoria": "juvenil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
+    },
+    {
+      "id": "atletismo-salto-juvenil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "Salto em distância",
+      "categoria": "juvenil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Salto em distância juvenil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-salto-juvenil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "Salto em distância",
+      "categoria": "juvenil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Salto em distância juvenil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-dardo-juvenil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "Lançamento de dardo",
+      "categoria": "juvenil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Lançamento de dardo juvenil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-dardo-juvenil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "Lançamento de dardo",
+      "categoria": "juvenil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Lançamento de dardo juvenil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-4x100-juvenil-feminino",
+      "modalidadeId": "atletismo",
+      "nome": "Revezamento 4×100 m",
+      "categoria": "juvenil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Revezamento 4×100 m juvenil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-4x100-juvenil-masculino",
+      "modalidadeId": "atletismo",
+      "nome": "Revezamento 4×100 m",
+      "categoria": "juvenil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Revezamento 4×100 m juvenil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "atletismo-4x80-infantil-misto",
+      "modalidadeId": "atletismo",
+      "nome": "Revezamento 4×80 m",
+      "categoria": "infantil",
+      "naipe": "misto",
+      "fonte": "Ficha de inscrição",
+      "status": "a-confirmar",
+      "podio": null,
+      "observacao": "O nome do arquivo indica 4×80 m infantil misto. O cabeçalho indica 4×100 m juvenil."
+    },
+    {
+      "id": "xadrez-infantil-feminino",
+      "modalidadeId": "xadrez",
+      "nome": "Xadrez",
+      "categoria": "infantil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Xadrez infantil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "tenis-mesa-infantil-feminino",
+      "modalidadeId": "tenis-mesa",
+      "nome": "Tênis de mesa",
+      "categoria": "infantil",
+      "naipe": "feminino",
+      "fonte": "Confirmação do responsável pelo painel",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Disputa confirmada por orientação do responsável pelo painel. A ficha contém um cabeçalho de xadrez infantil."
+    },
+    {
+      "id": "xadrez-infantil-masculino",
+      "modalidadeId": "xadrez",
+      "nome": "Xadrez",
+      "categoria": "infantil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Xadrez infantil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "tenis-mesa-infantil-masculino",
+      "modalidadeId": "tenis-mesa",
+      "nome": "Tênis de mesa",
+      "categoria": "infantil",
+      "naipe": "masculino",
+      "fonte": "Confirmação do responsável pelo painel",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Disputa confirmada por orientação do responsável pelo painel. A ficha contém um cabeçalho de xadrez infantil."
+    },
+    {
+      "id": "xadrez-juvenil-feminino",
+      "modalidadeId": "xadrez",
+      "nome": "Xadrez",
+      "categoria": "juvenil",
+      "naipe": "feminino",
+      "fonte": "Ficha de inscrição — Xadrez juvenil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "tenis-mesa-juvenil-feminino",
+      "modalidadeId": "tenis-mesa",
+      "nome": "Tênis de mesa",
+      "categoria": "juvenil",
+      "naipe": "feminino",
+      "fonte": "Confirmação do responsável pelo painel",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Disputa confirmada por orientação do responsável pelo painel. A ficha contém um cabeçalho de xadrez infantil."
+    },
+    {
+      "id": "xadrez-juvenil-masculino",
+      "modalidadeId": "xadrez",
+      "nome": "Xadrez",
+      "categoria": "juvenil",
+      "naipe": "masculino",
+      "fonte": "Ficha de inscrição — Xadrez juvenil",
+      "status": "aguardando",
+      "podio": null
+    },
+    {
+      "id": "tenis-mesa-juvenil-masculino",
+      "modalidadeId": "tenis-mesa",
+      "nome": "Tênis de mesa",
+      "categoria": "juvenil",
+      "naipe": "masculino",
+      "fonte": "Confirmação do responsável pelo painel",
+      "status": "aguardando",
+      "podio": null,
+      "observacao": "Disputa confirmada por orientação do responsável pelo painel. A ficha contém um cabeçalho de xadrez infantil."
+    }
+  ]
+}

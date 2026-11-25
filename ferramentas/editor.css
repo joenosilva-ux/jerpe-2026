@@ -1,0 +1,22 @@
+.resumo-corrida {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+  gap: .55rem;
+  margin-block: .9rem 1.2rem;
+}
+.resumo-corrida > div {
+  padding: .65rem;
+  border: 1px solid var(--contorno);
+  border-radius: 8px;
+  background: var(--superficie-2);
+}
+.resumo-corrida dt { color: var(--suave); font-size: .875rem; }
+.resumo-corrida dd { color: var(--ouro); font-weight: 750; overflow-wrap: anywhere; }
+.tabela-corrida { overflow-x: auto; }
+.tabela-corrida table { min-width: 540px; }
+.tabela-corrida th:first-child, .tabela-corrida td:last-child { text-align: left; }
+.tabela-corrida thead th:nth-child(2) { text-align: center; }
+.situacao-corrida { font-size: .875rem; font-weight: 650; }
+.corrida-garantida, .corrida-possivel { color: var(--verde); }
+.corrida-podeEmpatar, .corrida-empate { color: var(--ouro); }
+.corrida-semChance { color: #ffb9b9; }

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor local do campeonato | VIII JERPE</title>
+  <link rel="stylesheet" href="../docs/css/site.css">
+  <link rel="stylesheet" href="./editor.css">
+  <script type="module" src="./editor.mjs"></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="largura barra">
+      <a class="marca" href="../docs/">
+        <img src="../docs/imagens/identidade/jerpe-2026.png" alt="" width="354" height="303">
+        <span><strong>VIII JERPE 2026</strong><small>Ferramenta local</small></span>
+      </a>
+      <nav aria-label="Navegação principal"><a href="../docs/">Ver painel</a></nav>
+    </div>
+  </header>
+  <main class="largura editor">
+    <h1>Editor do campeonato</h1>
+    <section class="cartao" aria-labelledby="titulo-arquivo">
+      <h2 id="titulo-arquivo">Arquivo do campeonato</h2>
+      <p class="contexto">Use a base do projeto ou abra um JSON que você já exportou.</p>
+      <div class="acoes"><button type="button" id="carregar">Carregar base do projeto</button></div>
+      <label>Abrir arquivo JSON<input type="file" id="arquivo" accept=".json,application/json"></label>
+    </section>
+    <p class="aviso" id="status" role="status">Carregando a base do projeto…</p>
+    <section class="cartao" id="edicao" hidden aria-labelledby="titulo-edicao">
+      <h2 id="titulo-edicao">Resultado da disputa</h2>
+      <label>Modalidade<select id="modalidade"></select></label>
+      <label>Disputa<select id="disputa"></select></label>
+      <p id="fonte" class="contexto"></p>
+      <form id="formulario" hidden>
+        <label>Situação<select id="situacao"></select></label>
+        <fieldset id="campos-podio" hidden>
+          <legend>Escolas no pódio</legend>
+          <div class="campos-podio">
+            <label class="ouro">1º lugar · Ouro<select id="ouro"></select></label>
+            <label class="prata">2º lugar · Prata<select id="prata"></select></label>
+            <label class="bronze">3º lugar · Bronze<select id="bronze"></select></label>
+          </div>
+        </fieldset>
+        <p id="orientacao" class="contexto"></p>
+        <div class="acoes"><button id="salvar" class="principal" type="submit">Salvar alteração</button></div>
+      </form>
+    </section>
+    <section class="cartao corrida" id="corrida" hidden aria-labelledby="titulo-corrida">
+      <h2 id="titulo-corrida">Corrida pelo título</h2>
+      <p class="contexto">Cenários em ouros com base nos pódios salvos e nas disputas confirmadas.</p>
+      <dl class="resumo-corrida">
+        <div><dt>Ouros confirmados</dt><dd data-corrida="confirmados"></dd></div>
+        <div><dt>Ouros distribuídos</dt><dd data-corrida="distribuidos"></dd></div>
+        <div><dt>Ouros em disputa</dt><dd data-corrida="emDisputa"></dd></div>
+        <div><dt>Disputas a confirmar</dt><dd data-corrida="aConfirmar"></dd></div>
+        <div><dt>Ouros definidos</dt><dd data-corrida="percentual"></dd></div>
+      </dl>
+      <div class="tabela-corrida" role="region" aria-label="Cenários em ouros por escola" tabindex="0">
+        <table aria-describedby="notas-corrida">
+          <thead><tr>
+            <th scope="col">Escola</th><th scope="col">Ouros atuais</th><th scope="col">Máximo possível</th>
+            <th scope="col">Ouros para ultrapassar</th><th scope="col">Ouros para garantir</th><th scope="col">Situação</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="notas-corrida" class="contexto">
+        <p><strong>Ultrapassar</strong> supõe que a melhor rival mantenha os ouros atuais. <strong>Garantir</strong> significa ficar à frente mesmo que ela ganhe todos os ouros que sobrarem. Um traço indica que a meta está fora do alcance ou que ela não se aplica.</p>
+        <p>A conta considera qualquer escola capaz de ganhar qualquer ouro em disputa. Prata e bronze entram no quadro geral em caso de empate em ouros, conforme o critério vigente.</p>
+      </div>
+    </section>
+    <section class="cartao" id="edicao-destaques" hidden aria-labelledby="titulo-edicao-destaques">
+      <h2 id="titulo-edicao-destaques">Jogos em destaque</h2>
+      <p class="contexto">Selecione apenas os confrontos que deseja destacar no painel.</p>
+      <label>Confronto cadastrado<select id="selecionar-destaque"></select></label>
+      <button type="button" id="adicionar-destaque">Adicionar jogo em destaque</button>
+      <form id="form-destaque" hidden>
+        <div class="campos-jogo">
+          <label>Disputa<select name="competicaoId" required></select></label>
+          <label>Nome do confronto<input name="etapa" placeholder="Ex. Final" maxlength="80" required></label>
+          <label>Escola A<select name="escolaA"></select></label>
+          <label>Escola B<select name="escolaB"></select></label>
+          <label>Data<input name="data" type="date"></label>
+          <label>Horário (Manaus)<input name="hora" type="time"></label>
+          <label class="campo-local">Local<input name="local" maxlength="100"></label>
+          <label>Placar da escola A<input name="placarA" type="number" inputmode="numeric" min="0" step="1"></label>
+          <label>Placar da escola B<input name="placarB" type="number" inputmode="numeric" min="0" step="1"></label>
+        </div>
+        <p class="contexto">Para divulgar o placar, preencha as duas escolas e os dois números.</p>
+        <div class="acoes">
+          <button class="principal" type="submit" id="salvar-destaque">Salvar destaque</button>
+          <button type="button" id="fechar-destaque">Fechar edição</button>
+          <button type="button" id="remover-destaque" hidden>Remover destaque</button>
+        </div>
+      </form>
+      <p class="aviso" id="status-destaque" role="status" hidden></p>
+    </section>
+    <section class="cartao" id="exportacao" hidden aria-labelledby="titulo-exportacao">
+      <h2 id="titulo-exportacao">Exportar para publicação</h2>
+      <p class="contexto">Substitua <code>docs/dados/campeonato.json</code> pelo arquivo baixado.</p>
+      <button id="exportar" type="button">Exportar campeonato.json</button>
+    </section>
+  </main>
+</body>
+</html>

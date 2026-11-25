@@ -1,0 +1,7 @@
+*.docx
+*.pdf
+~$*
+/tmp/
+*.tmp
+/campeonato.anterior-local.json
+/campeonato.json
