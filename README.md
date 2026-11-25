@@ -4,7 +4,7 @@ Painel independente para acompanhar os Jogos Escolares de Rio Preto da Eva, no A
 
 ## Demonstração
 
-[Preparado para publicação no GitHub Pages](https://joenosilva-ux.github.io/jerpe-2026/)
+[Abrir o painel do JERPE](https://joenosilva-ux.github.io/jerpe-2026/)
 
 <img src="documentacao/imagens/painel-mobile.png" alt="Painel do JERPE em celular, com resumo das disputas e quadro de medalhas" width="390">
 
