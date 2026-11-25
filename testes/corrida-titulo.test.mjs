@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { atualizarDisputa } from "../docs/js/campeonato.mjs";
-import { calcularCorrida } from "../ferramentas/corrida-titulo.mjs";
+import { calcularCorrida } from "../docs/editor/corrida-titulo.mjs";
 
 const nomes = ["Luís Alberto", "Menino Jesus", "Ivanilde Braga", "Alegria de Saber", "Gilberto Mestrinho", "Luiz Fernando"];
 const escolas = nomes.map((nome, i) => ({ id: `escola-${i + 1}`, nome }));

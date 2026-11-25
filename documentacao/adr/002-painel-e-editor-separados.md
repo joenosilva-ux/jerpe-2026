@@ -1,6 +1,6 @@
 # ADR 002 — Painel público e editor local separados
 
-**Status** · Aceito
+**Status** · Substituído pelo [ADR 003](003-editor-no-github-pages.md)
 
 ## Contexto
 

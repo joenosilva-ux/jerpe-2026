@@ -1,4 +1,4 @@
-import { removerDestaque, salvarDestaque, tituloDisputa } from "../docs/js/campeonato.mjs";
+import { removerDestaque, salvarDestaque, tituloDisputa } from "../js/campeonato.mjs";
 
 export function prepararEditorDestaques(aoSalvar, aoAlterar) {
   const porId = (id) => document.getElementById(id);

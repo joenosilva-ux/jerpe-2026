@@ -1,4 +1,4 @@
-import { quadroDeMedalhas } from "../docs/js/campeonato.mjs";
+import { quadroDeMedalhas } from "../js/campeonato.mjs";
 
 const compararNomes = new Intl.Collator("pt-BR").compare;
 const rotulos = {

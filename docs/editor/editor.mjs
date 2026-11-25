@@ -1,6 +1,6 @@
 import {
   atualizarDisputa, carregarCampeonato, estados, lerCampeonato, medalhas, tituloDisputa, validar,
-} from "../docs/js/campeonato.mjs";
+} from "../js/campeonato.mjs";
 import { prepararEditorDestaques } from "./destaques.mjs";
 import { mostrarCorrida } from "./corrida-titulo.mjs";
 
@@ -131,7 +131,7 @@ async function abrirBase(leitura, descricao) {
   }
 }
 
-porId("carregar").addEventListener("click", () => abrirBase(carregarCampeonato, "Base do projeto carregada"));
+porId("carregar").addEventListener("click", () => abrirBase(carregarCampeonato, "Base do site carregada"));
 porId("arquivo").addEventListener("change", async (evento) => {
   const arquivo = evento.currentTarget.files[0];
   evento.currentTarget.value = "";
@@ -198,4 +198,4 @@ window.addEventListener("beforeunload", (evento) => {
   }
 });
 
-abrirBase(carregarCampeonato, "Base do projeto carregada");
+abrirBase(carregarCampeonato, "Base do site carregada");

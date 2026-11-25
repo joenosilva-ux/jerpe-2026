@@ -1,29 +1,34 @@
 # Operação do JERPE
 
-## Abrir o editor
+## Endereços e base de dados
 
-Na raiz do projeto, inicie o servidor local:
+- [Painel público](https://joenosilva-ux.github.io/jerpe-2026/)
+- [Editor do campeonato](https://joenosilva-ux.github.io/jerpe-2026/editor/)
+
+O editor abre automaticamente a base publicada. Use **Recarregar base do site** para consultar de novo o JSON do Pages ou **Abrir arquivo JSON** para retomar um arquivo do seu dispositivo. As alterações salvas no editor ficam na sessão do navegador até a exportação.
+
+Para trabalhar com a cópia local, inicie o servidor na raiz do projeto:
 
 ```powershell
-python -m http.server 8080 --bind 127.0.0.1
+python -m http.server 8080 --bind 127.0.0.1 --directory docs
 ```
 
-Abra o [editor](http://127.0.0.1:8080/ferramentas/editor.html). Ele lê a cópia local de `docs/dados/campeonato.json`. Se a última atualização foi publicada no GitHub, rode `git pull --ff-only` antes de abrir o editor ou baixe o JSON mais recente e selecione-o no editor. Partir de uma versão antiga pode apagar lançamentos, pois a exportação substitui a base inteira.
+Abra o [editor local](http://127.0.0.1:8080/editor/). Ele lê a cópia local de `docs/dados/campeonato.json`. Se a última atualização foi publicada no GitHub, sincronize a cópia com `git pull --ff-only` ou importe o arquivo mais recente. Antes de publicar a exportação, confira se alguém atualizou o repositório desde o início da edição. A exportação contém a base inteira e uma cópia antiga pode sobrescrever lançamentos.
 
 ## Registrar ou corrigir resultados
 
 1. Selecione modalidade e disputa. Marque **Pódio divulgado** e informe as escolas do 1º e 2º lugar. Informe o 3º lugar quando houver bronze.
 2. Clique em **Salvar alteração**. Para corrigir, ajuste as colocações e salve novamente. Ao cancelar uma disputa, as medalhas daquele pódio saem do quadro geral.
 3. Para registrar um jogo selecionado, clique em **Adicionar jogo em destaque**. Preencha horário, local e escolas à medida que forem confirmados. Para publicar um placar, informe as duas escolas e os dois números. O placar de 0 a 0 é válido.
-4. Clique em **Exportar campeonato.json** e substitua `docs/dados/campeonato.json` pelo arquivo baixado. Recarregue o painel local para conferir.
+4. Clique em **Exportar campeonato.json**. O JSON baixado é a base revisada para publicar no GitHub.
 
 O quadro geral soma medalhas a partir dos pódios. Um placar de jogo em destaque não concede medalhas. Em provas individuais, atletas diferentes de uma mesma escola podem ocupar mais de uma posição. A Corrida pelo título recalcula no editor ao salvar alterações e suas estimativas ficam fora da exportação. A data registrada é exibida no fuso de Manaus.
 
 ## Publicar pelo GitHub
 
-O GitHub Pages publica a branch `main` pela pasta `/docs`. As instruções abaixo pressupõem essa configuração. [Configuração do GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+O GitHub Pages publica a branch `main` pela pasta `/docs`. As duas páginas usam os mesmos recursos e dados. O editor não usa credenciais nem envia alterações ao GitHub. A autorização para alterar a base é a permissão de escrita no repositório ou de mesclagem na branch publicada. [Configuração do GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
-No computador, com o JSON revisado no caminho correto:
+No computador, substitua `docs/dados/campeonato.json` pelo arquivo exportado. Confira a mudança e envie:
 
 ```powershell
 git diff -- docs/dados/campeonato.json
@@ -32,9 +37,9 @@ git commit -m "Atualiza resultados do JERPE"
 git push
 ```
 
-No celular, com o conteúdo do JSON exportado disponível, abra o repositório pelo navegador. Entre em `docs/dados/campeonato.json`, toque no lápis de edição, substitua o conteúdo inteiro e use **Commit changes**. Se a branch exigir um pull request, faça a mesclagem depois de revisar. [Edição de arquivos no GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
+No celular, exporte o JSON pelo editor e abra o arquivo baixado em um aplicativo que permita copiar seu conteúdo. Entre na sua conta autorizada no GitHub pelo navegador e abra `docs/dados/campeonato.json` no repositório. Toque no lápis, substitua o conteúdo inteiro e use **Commit changes**. Se a branch exigir um pull request, faça a mesclagem depois de revisar. [Edição de arquivos no GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
 
-Após a publicação, recarregue o painel e confira o pódio, o destaque ou a data de atualização. Selecionar um arquivo no editor altera a sessão local. O commit é o que publica a atualização para os visitantes.
+Depois da implantação do commit pelo Pages, recarregue o painel e confira o pódio, o destaque ou a data de atualização.
 
 ## Recuperar uma versão anterior
 
