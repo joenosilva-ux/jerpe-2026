@@ -5,7 +5,7 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-25T03:47:05.871Z"
+    "atualizadoEm": "2026-11-25T05:09:47.700Z"
   },
   "destaques": [
     {
@@ -156,9 +156,14 @@
       "categoria": "unica",
       "naipe": "masculino",
       "fonte": "Boletim 01, p. 3",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "A ficha com nome masculino repete o cabeçalho feminino. O Boletim 01 confirma a disputa masculina."
+      "status": "divulgado",
+      "podio": {
+        "ouro": "gilberto-mestrinho",
+        "prata": "luis-alberto",
+        "bronze": "menino-jesus"
+      },
+      "observacao": "A ficha com nome masculino repete o cabeçalho feminino. O Boletim 01 confirma a disputa masculina.",
+      "divulgadoEm": "2026-11-25T05:09:47.700Z"
     },
     {
       "id": "volei-praia-infantil-feminino",
