@@ -92,10 +92,10 @@ export function validar(dados) {
       continue;
     }
     const podio = disputa.podio;
-    if (!registro(podio) || !podio.ouro || !podio.prata ||
+    if (!registro(podio) || !podio.ouro || !Object.hasOwn(podio, "prata") ||
         !Object.hasOwn(podio, "bronze") ||
         Object.keys(podio).some((medalha) => !medalhas.includes(medalha))) {
-      erros.push(prefixo + "informe o 1º e o 2º lugar. O bronze pode ficar vazio.");
+      erros.push(prefixo + "informe o 1º lugar. A prata e o bronze podem ficar vazios.");
       continue;
     }
     const premiadas = medalhas.map((medalha) => podio[medalha]).filter((escola) => escola !== null);
