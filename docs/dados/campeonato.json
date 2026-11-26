@@ -5,7 +5,7 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-25T11:32:15.600Z"
+    "atualizadoEm": "2026-11-26T16:25:57.037Z"
   },
   "destaques": [
     {
@@ -207,8 +207,12 @@
       "categoria": "infantil",
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Corridas infantil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -218,8 +222,12 @@
       "categoria": "infantil",
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Corridas infantil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -229,8 +237,12 @@
       "categoria": "infantil",
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Corridas infantil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "ivanilde-braga",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -240,8 +252,12 @@
       "categoria": "infantil",
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Corridas infantil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -251,8 +267,12 @@
       "categoria": "infantil",
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Corridas infantil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "menino-jesus",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -262,8 +282,12 @@
       "categoria": "infantil",
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Corridas infantil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "gilberto-mestrinho",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -273,8 +297,12 @@
       "categoria": "infantil",
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Salto em distância infantil",
-      "status": "aguardando",
-      "podio": null
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      }
     },
     {
       "id": "atletismo-salto-infantil-masculino",
@@ -283,8 +311,12 @@
       "categoria": "infantil",
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Salto em distância infantil",
-      "status": "aguardando",
-      "podio": null
+      "status": "concluida",
+      "podio": {
+        "ouro": "menino-jesus",
+        "prata": null,
+        "bronze": null
+      }
     },
     {
       "id": "atletismo-dardo-infantil-feminino",
@@ -294,7 +326,8 @@
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Lançamento de dardo infantil",
       "status": "aguardando",
-      "podio": null
+      "podio": null,
+      "observacao": "Prova adiada em 26/11/2026; nova data não informada."
     },
     {
       "id": "atletismo-dardo-infantil-masculino",
@@ -304,7 +337,8 @@
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Lançamento de dardo infantil",
       "status": "aguardando",
-      "podio": null
+      "podio": null,
+      "observacao": "Prova adiada em 26/11/2026; nova data não informada."
     },
     {
       "id": "atletismo-100m-juvenil-feminino",
@@ -313,8 +347,12 @@
       "categoria": "juvenil",
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Corridas juvenil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "menino-jesus",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -324,8 +362,12 @@
       "categoria": "juvenil",
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Corridas juvenil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -335,8 +377,12 @@
       "categoria": "juvenil",
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Corridas juvenil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "menino-jesus",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -346,8 +392,12 @@
       "categoria": "juvenil",
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Corridas juvenil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -357,8 +407,12 @@
       "categoria": "juvenil",
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Corridas juvenil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -368,8 +422,12 @@
       "categoria": "juvenil",
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Corridas juvenil",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "ivanilde-braga",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados."
     },
     {
@@ -379,8 +437,12 @@
       "categoria": "juvenil",
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Salto em distância juvenil",
-      "status": "aguardando",
-      "podio": null
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      }
     },
     {
       "id": "atletismo-salto-juvenil-masculino",
@@ -389,8 +451,12 @@
       "categoria": "juvenil",
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Salto em distância juvenil",
-      "status": "aguardando",
-      "podio": null
+      "status": "concluida",
+      "podio": {
+        "ouro": "menino-jesus",
+        "prata": null,
+        "bronze": null
+      }
     },
     {
       "id": "atletismo-dardo-juvenil-feminino",
@@ -400,7 +466,8 @@
       "naipe": "feminino",
       "fonte": "Ficha de inscrição — Lançamento de dardo juvenil",
       "status": "aguardando",
-      "podio": null
+      "podio": null,
+      "observacao": "Prova adiada em 26/11/2026; nova data não informada."
     },
     {
       "id": "atletismo-dardo-juvenil-masculino",
@@ -410,7 +477,8 @@
       "naipe": "masculino",
       "fonte": "Ficha de inscrição — Lançamento de dardo juvenil",
       "status": "aguardando",
-      "podio": null
+      "podio": null,
+      "observacao": "Prova adiada em 26/11/2026; nova data não informada."
     },
     {
       "id": "atletismo-4x100-juvenil-misto",
@@ -419,8 +487,12 @@
       "categoria": "juvenil",
       "naipe": "misto",
       "fonte": "Regulamento VIII JERPE 2026 — Art. 27, alínea a",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Disputa mista confirmada pelo responsável pelo painel conforme Art. 27. Fichas anteriores apresentavam divergência de naipe."
     },
     {
@@ -430,8 +502,12 @@
       "categoria": "infantil",
       "naipe": "misto",
       "fonte": "Regulamento VIII JERPE 2026 — Art. 27, alínea a; ficha de inscrição",
-      "status": "aguardando",
-      "podio": null,
+      "status": "concluida",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": null,
+        "bronze": null
+      },
       "observacao": "Disputa mista confirmada pelo responsável pelo painel conforme Art. 27. A ficha anterior apresentava cabeçalho divergente."
     },
     {
