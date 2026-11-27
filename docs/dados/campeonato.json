@@ -62,10 +62,6 @@
     {
       "id": "francisco-alves-da-costa",
       "nome": "Francisco Alves da Costa"
-    },
-    {
-      "id": "francisco-de-assis",
-      "nome": "Francisco de Assis"
     }
   ],
   "modalidades": [
@@ -479,7 +475,7 @@
       "podio": {
         "ouro": "menino-jesus",
         "prata": "luis-alberto",
-        "bronze": "francisco-de-assis"
+        "bronze": "francisco-alves-da-costa"
       },
       "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
