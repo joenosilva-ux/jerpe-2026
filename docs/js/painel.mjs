@@ -36,11 +36,11 @@ function exibirQuadro(dados, quadro) {
     lideres.length > 1 ? "Há empate na liderança." : `Na liderança · ${lideres[0].nome}`;
 }
 
-function cartaoJogo(jogo, escolas, titulo, bloco) {
+function cartaoJogo(jogo, escolas, { titulo, bloco, nivel = "h4" } = {}) {
   const article = elemento("article", null, "disputa jogo");
   const etapa = jogo.ordem && jogo.etapa !== `Jogo ${jogo.ordem}` && bloco ?
     `Jogo ${jogo.ordem} · ${jogo.etapa}` : jogo.etapa;
-  article.append(elemento(bloco ? "h5" : "h4", etapa));
+  article.append(elemento(nivel, etapa));
   if (titulo) article.append(elemento("p", titulo, "contexto"));
   const lados = elemento("ul", null, "lados-jogo");
   if (!jogo.escolaA && !jogo.escolaB) lados.append(elemento("li", "Equipes a confirmar"));
@@ -68,27 +68,59 @@ function cartaoJogo(jogo, escolas, titulo, bloco) {
 function exibirDestaques(dados, escolas, modalidades) {
   const disputas = new Map(dados.competicoes.map((item) => [item.id, item]));
   const titulo = (id) => tituloDisputa(disputas.get(id), modalidades);
+  const modalidadeDe = (id) => modalidades.get(disputas.get(id).modalidadeId);
+  const categoria = (id) => {
+    const disputa = disputas.get(id);
+    const modalidade = modalidadeDe(id);
+    const prova = disputa.nome === modalidade.nome ? null : disputa.nome;
+    return [prova, detalhes(disputa)].filter(Boolean).join(" · ") || disputa.nome;
+  };
   const agenda = dados.destaques ?? [];
   const grupos = agruparDestaques(agenda, diaNoFuso(dados.edicao.fuso));
   const filtro = porId("escola-jogos");
   [...escolas.values()].sort((a, b) => comparar(a.nome, b.nome))
     .forEach((escola) => filtro.add(new Option(escola.nome, escola.id)));
 
-  function renderizarAgenda(nome, blocos, vazio) {
-    const lista = porId(`jogos-${nome}`);
-    lista.replaceChildren();
-    for (const bloco of blocos) {
+  function organizarJogos(itens, porModalidade, montar) {
+    if (!itens.length) return [];
+    if (!porModalidade) return montar(itens, false);
+    const grupos = new Map();
+    for (const item of itens) {
+      const modalidade = modalidadeDe(item.competicaoId);
+      if (!grupos.has(modalidade.id)) grupos.set(modalidade.id, []);
+      grupos.get(modalidade.id).push(item);
+    }
+    return [...grupos].sort(([a], [b]) => comparar(modalidades.get(a).nome, modalidades.get(b).nome))
+      .map(([id, grupo]) => {
+        const secao = elemento("section", null, "modalidade-jogos");
+        secao.append(elemento("h4", modalidades.get(id).nome), ...montar(grupo, true));
+        return secao;
+      });
+  }
+
+  function montarBlocos(blocos, agrupado) {
+    return blocos.map((bloco) => {
       const secao = elemento("div", null, "bloco-jogos");
-      secao.append(elemento("h4", titulo(bloco.competicaoId)));
+      secao.append(elemento(agrupado ? "h5" : "h4",
+        (agrupado ? categoria : titulo)(bloco.competicaoId)));
       const infos = [bloco.data ? dataAgenda.format(new Date(bloco.data)) : "Data a confirmar", bloco.local];
       if (bloco.inicio) infos.push(`Início do bloco: ${bloco.inicio} (Manaus)`);
       secao.append(elemento("p", infos.filter(Boolean).join(" · "), "contexto"));
       const partidas = elemento("div", null, "cartoes-jogos");
-      for (const jogo of bloco.jogos) partidas.append(cartaoJogo(jogo, escolas, null, bloco));
+      partidas.append(...bloco.jogos.map((jogo) =>
+        cartaoJogo(jogo, escolas, { bloco, nivel: agrupado ? "h6" : "h5" })));
       secao.append(partidas);
-      lista.append(secao);
-    }
-    if (!blocos.length && vazio) lista.append(elemento("p", vazio, "vazio"));
+      return secao;
+    });
+  }
+
+  function montarResultados(jogos, agrupado) {
+    const partidas = elemento("div", null, "cartoes-jogos");
+    partidas.append(...jogos.map((jogo) => cartaoJogo(jogo, escolas, {
+      titulo: (agrupado ? categoria : titulo)(jogo.competicaoId),
+      nivel: agrupado ? "h5" : "h4",
+    })));
+    return [partidas];
   }
 
   function renderizar() {
@@ -96,12 +128,15 @@ function exibirDestaques(dados, escolas, modalidades) {
     const proximos = blocosDeDestaques(grupos.proximos, agenda, escola);
     const pendentes = blocosDeDestaques(grupos.pendentes, agenda, escola);
     const resultados = grupos.resultados.filter((jogo) => jogoDaEscola(jogo, escola));
-    renderizarAgenda("proximos", proximos, escola ? "Nenhum próximo jogo desta escola." : "Nenhum jogo na programação.");
-    renderizarAgenda("pendentes", pendentes);
+    const agendados = organizarJogos(proximos, !escola, montarBlocos);
+    if (!agendados.length) agendados.push(elemento("p",
+      escola ? "Nenhum próximo jogo desta escola." : "Nenhum jogo na programação.", "vazio"));
+    porId("jogos-proximos").replaceChildren(...agendados);
+    porId("jogos-pendentes").replaceChildren(...organizarJogos(pendentes, !escola, montarBlocos));
     porId("jogos-sem-resultado").hidden = !pendentes.length;
-    const lista = porId("jogos-resultados");
-    lista.replaceChildren(...resultados.map((jogo) => cartaoJogo(jogo, escolas, titulo(jogo.competicaoId))));
-    if (!resultados.length) lista.append(elemento("p", "Nenhum placar divulgado para esta seleção.", "vazio"));
+    const placares = organizarJogos(resultados, !escola, montarResultados);
+    if (!placares.length) placares.push(elemento("p", "Nenhum placar divulgado para esta seleção.", "vazio"));
+    porId("jogos-resultados").replaceChildren(...placares);
     const total = proximos.concat(pendentes).reduce((soma, bloco) => soma + bloco.jogos.length, resultados.length);
     porId("contagem-jogos").textContent = `${total} ${total === 1 ? "jogo encontrado" : "jogos encontrados"}`;
   }
