@@ -57,6 +57,20 @@ test("campeonato sem pódios calcula metas somente quando há disputas confirmad
   assert.ok(aberto.escolas.every((e) => e.situacao === "possivel" && e.garantir === 2));
 });
 
+test("ouro excepcional já concedido aumenta o total da escola sem criar um ouro futuro", () => {
+  const base = campeonato([1, 0, 0], 2);
+  const disputa = base.competicoes[0];
+  const dados = atualizarDisputa(base, disputa.id, {
+    status: disputa.status, divulgadoEm: disputa.divulgadoEm,
+    podio: { ...disputa.podio, medalhasAdicionais: [{ tipo: "ouro", escolaId: "escola-3" }] },
+  }, data);
+  const corrida = calcularCorrida(dados);
+  const escola = corrida.escolas.find((e) => e.id === "escola-3");
+  assert.equal(escola.atuais, 1);
+  assert.equal(escola.maximo, 3);
+  assert.deepEqual([corrida.confirmados, corrida.distribuidos, corrida.emDisputa], [3, 1, 2]);
+});
+
 test("confirmar, lançar, corrigir e cancelar uma disputa muda os totais em memória", () => {
   const base = campeonato([0, 0, 0, 0, 0, 0], 0, 1);
   const id = "disputa-1";

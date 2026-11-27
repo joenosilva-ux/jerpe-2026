@@ -41,6 +41,23 @@
             <label class="prata">2º lugar · Prata<select id="prata"></select></label>
             <label class="bronze">3º lugar · Bronze<select id="bronze"></select></label>
           </div>
+          <div id="medalhas-adicionais"></div>
+          <button type="button" id="adicionar-medalha">Adicionar medalha excepcional</button>
+          <template id="modelo-medalha">
+            <fieldset class="medalha-excepcional">
+              <legend>Medalha excepcional</legend>
+              <div class="campos-podio">
+                <label>Medalha<select name="tipo-extra" required>
+                  <option value="">Selecione a medalha</option>
+                  <option value="ouro">Ouro</option>
+                  <option value="prata">Prata</option>
+                  <option value="bronze">Bronze</option>
+                </select></label>
+                <label>Escola<select name="escola-extra" required></select></label>
+                <button type="button">Remover medalha</button>
+              </div>
+            </fieldset>
+          </template>
         </fieldset>
         <p id="orientacao" class="contexto"></p>
         <div class="acoes"><button id="salvar" class="principal" type="submit">Salvar alteração</button></div>
@@ -50,11 +67,11 @@
       <h2 id="titulo-corrida">Corrida pelo título</h2>
       <p class="contexto">Cenários em ouros com base nos pódios salvos e nas disputas confirmadas.</p>
       <dl class="resumo-corrida">
-        <div><dt>Ouros confirmados</dt><dd data-corrida="confirmados"></dd></div>
-        <div><dt>Ouros distribuídos</dt><dd data-corrida="distribuidos"></dd></div>
-        <div><dt>Ouros em disputa</dt><dd data-corrida="emDisputa"></dd></div>
+        <div><dt>Disputas confirmadas</dt><dd data-corrida="confirmados"></dd></div>
+        <div><dt>Disputas com pódio</dt><dd data-corrida="distribuidos"></dd></div>
+        <div><dt>Ouros futuros (estimativa)</dt><dd data-corrida="emDisputa"></dd></div>
         <div><dt>Disputas a confirmar</dt><dd data-corrida="aConfirmar"></dd></div>
-        <div><dt>Ouros definidos</dt><dd data-corrida="percentual"></dd></div>
+        <div><dt>Pódios definidos</dt><dd data-corrida="percentual"></dd></div>
       </dl>
       <div class="tabela-corrida" role="region" aria-label="Cenários em ouros por escola" tabindex="0">
         <table aria-describedby="notas-corrida">
@@ -67,7 +84,7 @@
       </div>
       <div id="notas-corrida" class="contexto">
         <p><strong>Ultrapassar</strong> supõe que a melhor rival mantenha os ouros atuais. <strong>Garantir</strong> significa ficar à frente mesmo que ela ganhe todos os ouros que sobrarem. Um traço indica que a meta está fora do alcance ou que ela não se aplica.</p>
-        <p>A conta considera qualquer escola capaz de ganhar qualquer ouro em disputa. Prata e bronze entram no quadro geral em caso de empate em ouros, conforme o critério vigente.</p>
+        <p>A projeção assume um ouro por disputa futura confirmada e considera qualquer escola capaz de ganhá-lo. Os ouros adicionais já concedidos entram nos totais atuais. Prata e bronze entram no quadro geral em caso de empate em ouros, conforme o critério vigente.</p>
       </div>
     </section>
     <section class="cartao" id="edicao-destaques" hidden aria-labelledby="titulo-edicao-destaques">
