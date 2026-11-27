@@ -19,7 +19,7 @@ Abra o [editor local](http://127.0.0.1:8080/editor/). Ele lê a cópia local de 
 
 1. Selecione modalidade e disputa. Marque **Pódio divulgado** e informe as escolas do 1º e 2º lugar. Informe o 3º lugar quando houver bronze.
 2. Clique em **Salvar alteração**. Para corrigir, ajuste as colocações e salve novamente. Ao cancelar uma disputa, as medalhas daquele pódio saem do quadro geral.
-3. Para registrar um jogo selecionado, clique em **Adicionar jogo em destaque**. Preencha horário, local e escolas à medida que forem confirmados. Para publicar um placar, informe as duas escolas e os dois números. O placar de 0 a 0 é válido.
+3. Para registrar um jogo selecionado, clique em **Adicionar jogo em destaque**. Preencha data, local e escolas à medida que forem confirmados. Use **Ordem no bloco** para jogos da mesma disputa, data e local. Informe o horário apenas quando estiver marcado. Se o jogo 1 tem hora marcada, o painel mostra o início do bloco e indica **Em sequência** nos jogos seguintes sem hora. Para publicar um placar, informe as duas escolas e os dois números. O placar de 0 a 0 é válido.
 4. Clique em **Exportar campeonato.json**. O JSON baixado é a base revisada para publicar no GitHub.
 
 Quando o resultado oficial concede mais de uma medalha da mesma cor, preencha o pódio normalmente e use **Adicionar medalha excepcional** para selecionar o tipo e a escola de cada medalha extra. Para corrigir ou retirar uma medalha excepcional, altere os campos da linha ou clique em **Remover medalha** e salve o pódio.

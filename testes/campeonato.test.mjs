@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
-  agruparDestaques, atualizarDisputa, diaNoFuso, filtrarDisputas, lerCampeonato, medalhasDoPodio,
+  agruparDestaques, atualizarDisputa, blocosDeDestaques, diaNoFuso, filtrarDisputas, lerCampeonato, medalhasDoPodio,
   quadroDeMedalhas, removerDestaque, salvarDestaque, validar,
 } from "../docs/js/campeonato.mjs";
 
@@ -174,5 +174,31 @@ test("valida placar incompleto, escolas repetidas e data de jogo", () => {
   assert.throws(() => salvarDestaque(inicial, { ...jogo, placar: { a: 0, b: null } }, data), /placar/);
   assert.throws(() => salvarDestaque(inicial, { ...jogo, escolaB: primeiro }, data), /diferentes/);
   assert.throws(() => salvarDestaque(inicial, { ...jogo, data: "2026-02-30" }, data), /data inválida/);
+  for (const ordem of [0, 1.5, "2"]) {
+    assert.throws(() => salvarDestaque(inicial, { ...jogo, ordem }, data), /ordem do jogo/);
+  }
   assert.equal(diaNoFuso("America/Manaus", new Date("2026-11-26T03:59:00Z")), "2026-11-25");
+});
+
+test("agenda filtra os dois lados e mantém a ordem e o início do bloco original", () => {
+  const base = { data: "2026-11-27", local: "Ginásio", competicaoId: futsal };
+  const abertura = {
+    ...base, id: "jogo-1", ordem: 1, hora: "07:00", escolaA: primeiro, escolaB: segundo,
+    placar: { a: 1, b: 0 },
+  };
+  const segundoJogo = { ...base, id: "jogo-2", ordem: 2, escolaA: primeiro, escolaB: terceiro };
+  const terceiroJogo = { ...base, id: "jogo-3", ordem: 3, escolaA: terceiro, escolaB: segundo };
+  const outraCategoria = { ...base, competicaoId: volei, id: "outro-bloco", ordem: 2, escolaA: terceiro };
+  const outroDia = { ...base, id: "outro-dia", data: "2026-11-28", ordem: 2, escolaA: terceiro };
+  const agenda = [terceiroJogo, outraCategoria, outroDia, abertura, segundoJogo];
+  const grupos = agruparDestaques(agenda, "2026-11-27");
+  assert.deepEqual(grupos.resultados, [abertura]);
+  const blocos = blocosDeDestaques(grupos.proximos, agenda, terceiro);
+  assert.deepEqual(blocos.map((bloco) => [bloco.inicio, bloco.jogos.map((jogo) => jogo.id)]), [
+    ["07:00", ["jogo-2", "jogo-3"]],
+    [undefined, ["outro-bloco"]],
+    [undefined, ["outro-dia"]],
+  ]);
+  assert.equal(segundoJogo.hora, undefined);
+  assert.equal(blocosDeDestaques(grupos.proximos, agenda, primeiro)[0].jogos.length, 1);
 });

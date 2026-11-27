@@ -152,6 +152,9 @@ function validarDestaques(destaques, indices, erros) {
     if (jogo.hora != null && (typeof jogo.hora !== "string" || !/^([01]\d|2[0-3]):[0-5]\d$/.test(jogo.hora))) {
       erros.push(prefixo + "horário inválido.");
     }
+    if (jogo.ordem != null && (!Number.isSafeInteger(jogo.ordem) || jogo.ordem < 1)) {
+      erros.push(prefixo + "a ordem do jogo deve ser um número inteiro positivo.");
+    }
     const lados = [jogo.escolaA, jogo.escolaB].filter((escola) => escola != null);
     if (lados.some((escola) => !indices.escolas.has(escola)) || new Set(lados).size !== lados.length) {
       erros.push(prefixo + "selecione escolas participantes válidas e diferentes.");
@@ -247,6 +250,35 @@ export function agruparDestaques(destaques, hoje) {
     pendentes: destaques.filter((j) => j.placar == null && j.data && j.data < hoje).sort((a, b) => ordemAgenda(b, a)),
     resultados: destaques.filter((j) => j.placar != null).sort(porAtualizacao),
   };
+}
+
+export function jogoDaEscola(jogo, escola) {
+  return !escola || jogo.escolaA === escola || jogo.escolaB === escola;
+}
+
+export function blocosDeDestaques(jogos, agenda, escola = "") {
+  const chave = ({ data, local, competicaoId }) => JSON.stringify([data || null, local || null, competicaoId]);
+  const inicios = new Map(agenda.filter((jogo) => jogo.ordem === 1 && jogo.hora)
+    .map((jogo) => [chave(jogo), jogo.hora]));
+  const blocos = new Map();
+  for (const jogo of jogos) {
+    if (!jogoDaEscola(jogo, escola)) continue;
+    const id = chave(jogo);
+    if (!blocos.has(id)) {
+      blocos.set(id, {
+        data: jogo.data, local: jogo.local, competicaoId: jogo.competicaoId,
+        inicio: inicios.get(id), jogos: [],
+      });
+    }
+    blocos.get(id).jogos.push(jogo);
+  }
+  for (const bloco of blocos.values()) {
+    bloco.jogos.sort((a, b) => (a.ordem ?? Infinity) - (b.ordem ?? Infinity) ||
+      (a.hora ?? "99:99").localeCompare(b.hora ?? "99:99"));
+  }
+  return [...blocos.values()].sort((a, b) =>
+    (a.data ?? "9999").localeCompare(b.data ?? "9999") ||
+    (a.inicio ?? "99:99").localeCompare(b.inicio ?? "99:99"));
 }
 
 export function diaNoFuso(fuso, data = new Date()) {

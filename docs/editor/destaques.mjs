@@ -68,8 +68,13 @@ export function prepararEditorDestaques(aoSalvar, aoAlterar) {
     for (const lado of ["escolaA", "escolaB"]) {
       form.elements[lado].replaceChildren(...opcoes(dados.escolas.map((e) => [e.id, e.nome]), "A confirmar"));
     }
-    lista.replaceChildren(...opcoes((dados.destaques ?? []).map((jogo) =>
-      [jogo.id, `${jogo.etapa} · ${titulos.get(jogo.competicaoId)}`]), "Selecione um confronto"));
+    const escolas = new Map(dados.escolas.map((escola) => [escola.id, escola.nome]));
+    lista.replaceChildren(...opcoes((dados.destaques ?? []).map((jogo) => {
+      const equipes = [jogo.escolaA, jogo.escolaB].map((idEscola) => escolas.get(idEscola) ?? "A confirmar");
+      const rotulo = [titulos.get(jogo.competicaoId), jogo.etapa, equipes.join(" × "), jogo.data]
+        .filter(Boolean).join(" · ");
+      return [jogo.id, rotulo];
+    }), "Selecione um confronto"));
     secao.hidden = false;
     selecionar(id);
   }
@@ -96,6 +101,8 @@ export function prepararEditorDestaques(aoSalvar, aoAlterar) {
     const formulario = campos();
     const jogo = Object.fromEntries(["competicaoId", "etapa", "escolaA", "escolaB", "data", "hora", "local"]
       .map((campo) => [campo, formulario.get(campo).trim() || null]));
+    const ordem = formulario.get("ordem");
+    if (ordem !== "") jogo.ordem = Number(ordem);
     jogo.id = idAtual || `jogo-${crypto.randomUUID()}`;
     const a = formulario.get("placarA");
     const b = formulario.get("placarB");

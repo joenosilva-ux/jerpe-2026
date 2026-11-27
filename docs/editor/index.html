@@ -100,11 +100,12 @@
           <label>Escola B<select name="escolaB"></select></label>
           <label>Data<input name="data" type="date"></label>
           <label>Horário (Manaus)<input name="hora" type="time"></label>
+          <label>Ordem no bloco<input name="ordem" type="number" inputmode="numeric" min="1" step="1"></label>
           <label class="campo-local">Local<input name="local" maxlength="100"></label>
           <label>Placar da escola A<input name="placarA" type="number" inputmode="numeric" min="0" step="1"></label>
           <label>Placar da escola B<input name="placarB" type="number" inputmode="numeric" min="0" step="1"></label>
         </div>
-        <p class="contexto">Para divulgar o placar, preencha as duas escolas e os dois números.</p>
+        <p class="contexto">Use a ordem para numerar jogos da mesma disputa, data e local. Preencha o horário apenas quando estiver marcado. Para divulgar o placar, preencha as duas escolas e os dois números.</p>
         <div class="acoes">
           <button class="principal" type="submit" id="salvar-destaque">Salvar destaque</button>
           <button type="button" id="fechar-destaque">Fechar edição</button>

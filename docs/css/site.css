@@ -157,12 +157,20 @@ button:disabled { cursor: default; opacity: .55; }
 .lista-medalhas li { display: flex; align-items: baseline; gap: .45rem; margin-top: .3rem; overflow-wrap: anywhere; }
 .medalha { font-weight: 750; flex: 0 0 1.5rem; }
 .lista-jogos {
-  display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  display: grid; gap: 1.1rem;
   margin-inline: 1.25rem;
 }
+.lista-jogos > div { min-width: 0; }
 .lista-jogos h3 { font-size: 1rem; margin-bottom: .65rem; }
-.grupo-jogos { display: grid; gap: .6rem; }
-.jogo h4 { font-size: 1.05rem; }
+.filtro-jogos { margin: 0 1.25rem 1.2rem; max-width: 25rem; }
+.nota-jogos { margin-top: .45rem; color: var(--suave); }
+.grupo-jogos { display: grid; gap: .85rem; }
+.cartoes-jogos, #jogos-resultados {
+  display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+}
+.bloco-jogos { padding-block: .75rem; border-top: 1px solid var(--contorno); }
+.bloco-jogos > .contexto { margin-bottom: .65rem; }
+.jogo h4, .jogo h5 { font-size: 1.05rem; }
 .lados-jogo { list-style: none; padding: 0; margin: .7rem 0; }
 .lados-jogo li { display: flex; justify-content: space-between; gap: .75rem; padding: .25rem 0; }
 .lados-jogo li + li { border-top: 1px solid var(--contorno); }
