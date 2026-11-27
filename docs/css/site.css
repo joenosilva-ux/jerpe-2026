@@ -165,12 +165,17 @@ button:disabled { cursor: default; opacity: .55; }
 .filtro-jogos { margin: 0 1.25rem 1.2rem; max-width: 25rem; }
 .nota-jogos { margin-top: .45rem; color: var(--suave); }
 .grupo-jogos { display: grid; gap: .85rem; }
-.cartoes-jogos, #jogos-resultados {
+.cartoes-jogos {
   display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
 }
+.modalidade-jogos {
+  min-width: 0; padding: .9rem; border: 1px solid var(--contorno); border-radius: .75rem;
+}
+.modalidade-jogos > h4 { font-size: 1.1rem; margin-bottom: .5rem; }
+.bloco-jogos > h5 { font-size: 1rem; }
 .bloco-jogos { padding-block: .75rem; border-top: 1px solid var(--contorno); }
 .bloco-jogos > .contexto { margin-bottom: .65rem; }
-.jogo h4, .jogo h5 { font-size: 1.05rem; }
+.jogo h4, .jogo h5, .jogo h6 { font-size: 1.05rem; }
 .lados-jogo { list-style: none; padding: 0; margin: .7rem 0; }
 .lados-jogo li { display: flex; justify-content: space-between; gap: .75rem; padding: .25rem 0; }
 .lados-jogo li + li { border-top: 1px solid var(--contorno); }
