@@ -1,10 +1,11 @@
 import {
-  agruparDestaques, carregarCampeonato, dataLocal, detalhes, diaNoFuso, estados, filtrarDisputas,
-  medalhas, medalhasDoPodio, quadroDeMedalhas, tituloDisputa,
+  agruparDestaques, blocosDeDestaques, carregarCampeonato, dataLocal, detalhes, diaNoFuso, estados,
+  filtrarDisputas, jogoDaEscola, medalhas, medalhasDoPodio, quadroDeMedalhas, tituloDisputa,
 } from "./campeonato.mjs";
 
 const porId = (id) => document.getElementById(id);
 const comparar = new Intl.Collator("pt-BR", { numeric: true }).compare;
+const dataAgenda = new Intl.DateTimeFormat("pt-BR", { dateStyle: "full", timeZone: "UTC" });
 
 function elemento(tag, texto, classe) {
   const node = document.createElement(tag);
@@ -35,12 +36,15 @@ function exibirQuadro(dados, quadro) {
     lideres.length > 1 ? "Há empate na liderança." : `Na liderança · ${lideres[0].nome}`;
 }
 
-function cartaoJogo(jogo, escolas, disputas, modalidades) {
+function cartaoJogo(jogo, escolas, titulo, bloco) {
   const article = elemento("article", null, "disputa jogo");
-  const disputa = disputas.get(jogo.competicaoId);
-  article.append(elemento("h4", jogo.etapa), elemento("p", tituloDisputa(disputa, modalidades), "contexto"));
+  const etapa = jogo.ordem && jogo.etapa !== `Jogo ${jogo.ordem}` && bloco ?
+    `Jogo ${jogo.ordem} · ${jogo.etapa}` : jogo.etapa;
+  article.append(elemento(bloco ? "h5" : "h4", etapa));
+  if (titulo) article.append(elemento("p", titulo, "contexto"));
   const lados = elemento("ul", null, "lados-jogo");
-  for (const lado of ["A", "B"]) {
+  if (!jogo.escolaA && !jogo.escolaB) lados.append(elemento("li", "Equipes a confirmar"));
+  for (const lado of (jogo.escolaA || jogo.escolaB ? ["A", "B"] : [])) {
     const linha = elemento("li");
     linha.append(elemento("span", escolas.get(jogo[`escola${lado}`])?.nome ?? "Adversário a confirmar"));
     if (jogo.placar != null) {
@@ -50,31 +54,59 @@ function cartaoJogo(jogo, escolas, disputas, modalidades) {
   }
   article.append(lados);
   const infos = [];
-  if (jogo.data) {
-    const formatador = new Intl.DateTimeFormat("pt-BR", { dateStyle: "medium", timeZone: "UTC" });
-    infos.push(formatador.format(new Date(jogo.data)));
-  }
+  if (!bloco && jogo.data) infos.push(dataAgenda.format(new Date(jogo.data)));
   if (jogo.hora) {
-    if (!jogo.data && jogo.placar == null) infos.push("Data a confirmar");
-    infos.push(`${jogo.hora} (Manaus)`);
+    infos.push(`${jogo.hora} (Manaus)${jogo.placar == null ? " · Horário marcado" : ""}`);
   } else if (jogo.placar == null) {
-    infos.push(jogo.data ? "Horário a confirmar" : "Data e horário a confirmar");
+    infos.push(bloco?.inicio && jogo.ordem > 1 ? "Em sequência" : "Horário a confirmar");
   }
-  if (jogo.local) infos.push(jogo.local);
+  if (!bloco && jogo.local) infos.push(jogo.local);
   if (infos.length) article.append(elemento("p", infos.join(" · "), "contexto"));
   return article;
 }
 
 function exibirDestaques(dados, escolas, modalidades) {
   const disputas = new Map(dados.competicoes.map((item) => [item.id, item]));
-  const grupos = agruparDestaques(dados.destaques ?? [], diaNoFuso(dados.edicao.fuso));
-  const vazios = { proximos: "Nenhum jogo em destaque na programação.", resultados: "Nenhum placar divulgado." };
-  for (const [nome, jogos] of Object.entries(grupos)) {
+  const titulo = (id) => tituloDisputa(disputas.get(id), modalidades);
+  const agenda = dados.destaques ?? [];
+  const grupos = agruparDestaques(agenda, diaNoFuso(dados.edicao.fuso));
+  const filtro = porId("escola-jogos");
+  [...escolas.values()].sort((a, b) => comparar(a.nome, b.nome))
+    .forEach((escola) => filtro.add(new Option(escola.nome, escola.id)));
+
+  function renderizarAgenda(nome, blocos, vazio) {
     const lista = porId(`jogos-${nome}`);
-    for (const jogo of jogos) lista.append(cartaoJogo(jogo, escolas, disputas, modalidades));
-    if (!jogos.length && vazios[nome]) lista.append(elemento("p", vazios[nome], "vazio"));
+    lista.replaceChildren();
+    for (const bloco of blocos) {
+      const secao = elemento("div", null, "bloco-jogos");
+      secao.append(elemento("h4", titulo(bloco.competicaoId)));
+      const infos = [bloco.data ? dataAgenda.format(new Date(bloco.data)) : "Data a confirmar", bloco.local];
+      if (bloco.inicio) infos.push(`Início do bloco: ${bloco.inicio} (Manaus)`);
+      secao.append(elemento("p", infos.filter(Boolean).join(" · "), "contexto"));
+      const partidas = elemento("div", null, "cartoes-jogos");
+      for (const jogo of bloco.jogos) partidas.append(cartaoJogo(jogo, escolas, null, bloco));
+      secao.append(partidas);
+      lista.append(secao);
+    }
+    if (!blocos.length && vazio) lista.append(elemento("p", vazio, "vazio"));
   }
-  porId("jogos-sem-resultado").hidden = !grupos.pendentes.length;
+
+  function renderizar() {
+    const escola = filtro.value;
+    const proximos = blocosDeDestaques(grupos.proximos, agenda, escola);
+    const pendentes = blocosDeDestaques(grupos.pendentes, agenda, escola);
+    const resultados = grupos.resultados.filter((jogo) => jogoDaEscola(jogo, escola));
+    renderizarAgenda("proximos", proximos, escola ? "Nenhum próximo jogo desta escola." : "Nenhum jogo na programação.");
+    renderizarAgenda("pendentes", pendentes);
+    porId("jogos-sem-resultado").hidden = !pendentes.length;
+    const lista = porId("jogos-resultados");
+    lista.replaceChildren(...resultados.map((jogo) => cartaoJogo(jogo, escolas, titulo(jogo.competicaoId))));
+    if (!resultados.length) lista.append(elemento("p", "Nenhum placar divulgado para esta seleção.", "vazio"));
+    const total = proximos.concat(pendentes).reduce((soma, bloco) => soma + bloco.jogos.length, resultados.length);
+    porId("contagem-jogos").textContent = `${total} ${total === 1 ? "jogo encontrado" : "jogos encontrados"}`;
+  }
+  filtro.addEventListener("change", renderizar);
+  renderizar();
 }
 
 function linhaPodio(disputa, escolas) {

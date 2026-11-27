@@ -5,29 +5,290 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-27T04:59:12.346Z"
+    "atualizadoEm": "2026-11-27T05:35:55.599Z"
   },
   "destaques": [
+    {
+      "id": "volei-praia-juvenil-feminino-1",
+      "competicaoId": "volei-praia-juvenil-feminino",
+      "etapa": "Jogo 1",
+      "escolaA": "menino-jesus",
+      "escolaB": "ivanilde-braga",
+      "data": "2026-11-27",
+      "hora": "07:00",
+      "ordem": 1,
+      "local": "Balneário Municipal"
+    },
+    {
+      "id": "volei-praia-juvenil-feminino-2",
+      "competicaoId": "volei-praia-juvenil-feminino",
+      "etapa": "Jogo 2",
+      "escolaA": "luis-alberto",
+      "escolaB": "alegria-de-saber",
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Balneário Municipal"
+    },
+    {
+      "id": "volei-praia-juvenil-feminino-3",
+      "competicaoId": "volei-praia-juvenil-feminino",
+      "etapa": "Jogo 3",
+      "escolaA": "gilberto-mestrinho",
+      "escolaB": null,
+      "data": "2026-11-27",
+      "ordem": 3,
+      "local": "Balneário Municipal"
+    },
+    {
+      "id": "volei-praia-juvenil-masculino-1",
+      "competicaoId": "volei-praia-juvenil-masculino",
+      "etapa": "Jogo 1",
+      "escolaA": "gilberto-mestrinho",
+      "escolaB": "alegria-de-saber",
+      "data": "2026-11-27",
+      "ordem": 1,
+      "local": "Balneário Municipal"
+    },
+    {
+      "id": "volei-praia-juvenil-masculino-2",
+      "competicaoId": "volei-praia-juvenil-masculino",
+      "etapa": "Jogo 2",
+      "escolaA": "ivanilde-braga",
+      "escolaB": "menino-jesus",
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Balneário Municipal"
+    },
+    {
+      "id": "volei-praia-juvenil-masculino-3",
+      "competicaoId": "volei-praia-juvenil-masculino",
+      "etapa": "Jogo 3",
+      "escolaA": "luis-alberto",
+      "escolaB": null,
+      "data": "2026-11-27",
+      "ordem": 3,
+      "local": "Balneário Municipal"
+    },
     {
       "id": "praia-infantil-feminino-final",
       "competicaoId": "volei-praia-infantil-feminino",
       "etapa": "Final",
       "escolaA": "luis-alberto",
-      "escolaB": "menino-jesus"
+      "escolaB": "menino-jesus",
+      "data": "2026-11-27",
+      "ordem": 1,
+      "local": "Balneário Municipal"
     },
     {
       "id": "praia-infantil-masculino-semifinal",
       "competicaoId": "volei-praia-infantil-masculino",
       "etapa": "Semifinal",
       "escolaA": "menino-jesus",
-      "escolaB": "luis-alberto"
+      "escolaB": "luis-alberto",
+      "data": "2026-11-27",
+      "ordem": 1,
+      "local": "Balneário Municipal"
     },
     {
       "id": "praia-infantil-masculino-final",
       "competicaoId": "volei-praia-infantil-masculino",
       "etapa": "Final",
       "escolaA": "ivanilde-braga",
-      "escolaB": null
+      "escolaB": null,
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Balneário Municipal"
+    },
+    {
+      "id": "tenis-mesa-infantil-masculino-1",
+      "competicaoId": "tenis-mesa-infantil-masculino",
+      "etapa": "Jogo 1",
+      "escolaA": "luiz-fernando",
+      "escolaB": "alegria-de-saber",
+      "data": "2026-11-27",
+      "hora": "07:00",
+      "ordem": 1,
+      "local": "Ginásio Dayson Siqueira Pinto"
+    },
+    {
+      "id": "tenis-mesa-infantil-masculino-2",
+      "competicaoId": "tenis-mesa-infantil-masculino",
+      "etapa": "Jogo 2",
+      "escolaA": "francisco-alves-da-costa",
+      "escolaB": "luis-alberto",
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Ginásio Dayson Siqueira Pinto"
+    },
+    {
+      "id": "tenis-mesa-infantil-masculino-3",
+      "competicaoId": "tenis-mesa-infantil-masculino",
+      "etapa": "Jogo 3",
+      "escolaA": "menino-jesus",
+      "escolaB": "gilberto-mestrinho",
+      "data": "2026-11-27",
+      "ordem": 3,
+      "local": "Ginásio Dayson Siqueira Pinto"
+    },
+    {
+      "id": "tenis-mesa-infantil-feminino-1",
+      "competicaoId": "tenis-mesa-infantil-feminino",
+      "etapa": "Jogo 1",
+      "escolaA": "francisco-alves-da-costa",
+      "escolaB": "menino-jesus",
+      "data": "2026-11-27",
+      "hora": "07:30",
+      "ordem": 1,
+      "local": "Ginásio Dayson Siqueira Pinto"
+    },
+    {
+      "id": "tenis-mesa-infantil-feminino-2",
+      "competicaoId": "tenis-mesa-infantil-feminino",
+      "etapa": "Jogo 2",
+      "escolaA": "alegria-de-saber",
+      "escolaB": "luis-alberto",
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Ginásio Dayson Siqueira Pinto"
+    },
+    {
+      "id": "tenis-mesa-juvenil-masculino-1",
+      "competicaoId": "tenis-mesa-juvenil-masculino",
+      "etapa": "Jogo 1",
+      "escolaA": "gilberto-mestrinho",
+      "escolaB": "ivanilde-braga",
+      "data": "2026-11-27",
+      "hora": "07:00",
+      "ordem": 1,
+      "local": "Ginásio Dayson Siqueira Pinto"
+    },
+    {
+      "id": "tenis-mesa-juvenil-masculino-2",
+      "competicaoId": "tenis-mesa-juvenil-masculino",
+      "etapa": "Jogo 2",
+      "escolaA": "menino-jesus",
+      "escolaB": "luis-alberto",
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Ginásio Dayson Siqueira Pinto"
+    },
+    {
+      "id": "xadrez-juvenil-feminino-1",
+      "competicaoId": "xadrez-juvenil-feminino",
+      "etapa": "Jogo 1",
+      "escolaA": "menino-jesus",
+      "escolaB": "luis-alberto",
+      "data": "2026-11-27",
+      "ordem": 1,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "xadrez-juvenil-feminino-2",
+      "competicaoId": "xadrez-juvenil-feminino",
+      "etapa": "Jogo 2",
+      "escolaA": "ivanilde-braga",
+      "escolaB": "gilberto-mestrinho",
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "xadrez-juvenil-masculino-1",
+      "competicaoId": "xadrez-juvenil-masculino",
+      "etapa": "Jogo 1",
+      "escolaA": "gilberto-mestrinho",
+      "escolaB": "menino-jesus",
+      "data": "2026-11-27",
+      "ordem": 1,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "xadrez-juvenil-masculino-2",
+      "competicaoId": "xadrez-juvenil-masculino",
+      "etapa": "Jogo 2",
+      "escolaA": "ivanilde-braga",
+      "escolaB": "luis-alberto",
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "xadrez-juvenil-masculino-3",
+      "competicaoId": "xadrez-juvenil-masculino",
+      "etapa": "Semifinal",
+      "escolaA": "alegria-de-saber",
+      "escolaB": null,
+      "data": "2026-11-27",
+      "ordem": 3,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "xadrez-infantil-feminino-1",
+      "competicaoId": "xadrez-infantil-feminino",
+      "etapa": "Jogo 1",
+      "escolaA": "alegria-de-saber",
+      "escolaB": "luis-alberto",
+      "data": "2026-11-27",
+      "ordem": 1,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "xadrez-infantil-feminino-2",
+      "competicaoId": "xadrez-infantil-feminino",
+      "etapa": "Jogo 2",
+      "escolaA": "menino-jesus",
+      "escolaB": "luiz-fernando",
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "xadrez-infantil-feminino-3",
+      "competicaoId": "xadrez-infantil-feminino",
+      "etapa": "Jogo 3",
+      "escolaA": "francisco-alves-da-costa",
+      "escolaB": "gilberto-mestrinho",
+      "data": "2026-11-27",
+      "ordem": 3,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "xadrez-infantil-masculino-1",
+      "competicaoId": "xadrez-infantil-masculino",
+      "etapa": "Jogo 1",
+      "escolaA": "menino-jesus",
+      "escolaB": "luiz-fernando",
+      "data": "2026-11-27",
+      "ordem": 1,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "xadrez-infantil-masculino-2",
+      "competicaoId": "xadrez-infantil-masculino",
+      "etapa": "Jogo 2",
+      "escolaA": "luis-alberto",
+      "escolaB": "francisco-alves-da-costa",
+      "data": "2026-11-27",
+      "ordem": 2,
+      "local": "Auditório da SEMECD"
+    },
+    {
+      "id": "volei-unica-feminino-final",
+      "competicaoId": "volei-unica-feminino",
+      "etapa": "Final",
+      "escolaA": null,
+      "escolaB": null,
+      "data": "2026-11-27",
+      "local": "Ginásio Dayson Siqueira Pinto"
+    },
+    {
+      "id": "volei-unica-masculino-final",
+      "competicaoId": "volei-unica-masculino",
+      "etapa": "Final",
+      "escolaA": null,
+      "escolaB": null,
+      "data": "2026-11-27",
+      "local": "Ginásio Dayson Siqueira Pinto"
     }
   ],
   "regras": {
