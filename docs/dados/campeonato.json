@@ -5,7 +5,7 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-27T01:35:50.523633+00:00"
+    "atualizadoEm": "2026-11-27T02:06:37.583104+00:00"
   },
   "destaques": [
     {
@@ -461,11 +461,12 @@
       "fonte": "RESULTADOS.pdf — p. 1",
       "status": "divulgado",
       "podio": {
-        "ouro": "menino-jesus",
-        "prata": "alegria-de-saber",
-        "bronze": "luis-alberto"
+        "ouro": "alegria-de-saber",
+        "prata": "luis-alberto",
+        "bronze": null
       },
-      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00",
+      "observacao": "Resultado ajustado por orientação do responsável pelo painel: primeira colocada retirada; segunda e terceira promovidas. Novo terceiro lugar não informado."
     },
     {
       "id": "atletismo-salto-juvenil-masculino",
