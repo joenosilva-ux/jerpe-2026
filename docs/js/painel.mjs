@@ -1,6 +1,6 @@
 import {
   agruparDestaques, carregarCampeonato, dataLocal, detalhes, diaNoFuso, estados, filtrarDisputas,
-  medalhas, quadroDeMedalhas, tituloDisputa,
+  medalhas, medalhasDoPodio, quadroDeMedalhas, tituloDisputa,
 } from "./campeonato.mjs";
 
 const porId = (id) => document.getElementById(id);
@@ -79,13 +79,13 @@ function exibirDestaques(dados, escolas, modalidades) {
 
 function linhaPodio(disputa, escolas) {
   const lista = elemento("ol", null, "lista-medalhas");
-  medalhas.forEach((medalha, indice) => {
-    const escola = escolas.get(disputa.podio[medalha]);
-    if (!escola) return;
+  for (const { tipo, escolaId } of medalhasDoPodio(disputa.podio)) {
+    const escola = escolas.get(escolaId);
+    if (!escola) continue;
     const li = elemento("li");
-    li.append(elemento("span", `${indice + 1}º`, `medalha ${medalha}`), elemento("span", escola.nome));
+    li.append(elemento("span", `${medalhas.indexOf(tipo) + 1}º`, `medalha ${tipo}`), elemento("span", escola.nome));
     lista.append(li);
-  });
+  }
   return lista;
 }
 

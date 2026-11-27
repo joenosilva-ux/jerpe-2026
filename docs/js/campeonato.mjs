@@ -1,4 +1,5 @@
 export const medalhas = ["ouro", "prata", "bronze"];
+const camposPodio = [...medalhas, "medalhasAdicionais"];
 export const estados = {
   "a-confirmar": "Disputa a confirmar",
   aguardando: "Pódio ainda não divulgado",
@@ -31,6 +32,15 @@ export function tituloDisputa(disputa, modalidades) {
   const modalidade = modalidades.get(disputa.modalidadeId);
   const titulo = modalidade.nome === disputa.nome ? disputa.nome : `${modalidade.nome} · ${disputa.nome}`;
   return [titulo, detalhes(disputa)].filter(Boolean).join(" · ");
+}
+
+export function medalhasDoPodio(podio) {
+  const adicionais = podio.medalhasAdicionais ?? [];
+  return medalhas.flatMap((tipo) => {
+    const escolaId = podio[tipo];
+    const principais = escolaId === null ? [] : [{ tipo, escolaId }];
+    return [...principais, ...adicionais.filter((medalha) => medalha.tipo === tipo)];
+  });
 }
 
 export function validar(dados) {
@@ -94,13 +104,24 @@ export function validar(dados) {
     const podio = disputa.podio;
     if (!registro(podio) || !podio.ouro || !Object.hasOwn(podio, "prata") ||
         !Object.hasOwn(podio, "bronze") ||
-        Object.keys(podio).some((medalha) => !medalhas.includes(medalha))) {
+        Object.keys(podio).some((chave) => !camposPodio.includes(chave))) {
       erros.push(prefixo + "informe o 1º lugar. A prata e o bronze podem ficar vazios.");
       continue;
     }
-    const premiadas = medalhas.map((medalha) => podio[medalha]).filter((escola) => escola !== null);
+    const adicionais = podio.medalhasAdicionais;
+    if (Object.hasOwn(podio, "medalhasAdicionais") &&
+        (!Array.isArray(adicionais) || adicionais.some((medalha) =>
+          !registro(medalha) || !medalhas.includes(medalha.tipo) || !idValido(medalha.escolaId)))) {
+      erros.push(prefixo + "cada medalha excepcional deve ter um tipo válido e uma escola.");
+      continue;
+    }
+    const concedidas = medalhasDoPodio(podio);
+    const premiadas = concedidas.map(({ escolaId }) => escolaId);
     if (premiadas.some((escola) => !indices.escolas.has(escola))) {
       erros.push(prefixo + "o pódio contém uma escola inexistente.");
+    }
+    if (new Set(concedidas.map(({ tipo, escolaId }) => `${tipo}:${escolaId}`)).size !== concedidas.length) {
+      erros.push(prefixo + "a mesma medalha está repetida para uma escola.");
     }
     if (modalidade?.tipo === "coletiva" && new Set(premiadas).size !== premiadas.length) {
       erros.push(prefixo + "uma escola só pode ocupar uma posição no pódio coletivo.");
@@ -174,10 +195,10 @@ export function quadroDeMedalhas(dados) {
   ]));
   for (const disputa of dados.competicoes) {
     if (disputa.status !== "divulgado") continue;
-    for (const medalha of medalhas) {
-      const escola = linhas.get(disputa.podio[medalha]);
+    for (const { tipo, escolaId } of medalhasDoPodio(disputa.podio)) {
+      const escola = linhas.get(escolaId);
       if (!escola) continue;
-      escola[medalha]++;
+      escola[tipo]++;
       escola.total++;
     }
   }
@@ -240,7 +261,8 @@ export function filtrarDisputas(disputas, { modalidade = "", escola = "", status
   return disputas.filter((disputa) =>
     (!modalidade || disputa.modalidadeId === modalidade) &&
     (!status || disputa.status === status) &&
-    (!escola || (disputa.status === "divulgado" && medalhas.some((m) => disputa.podio[m] === escola))));
+    (!escola || (disputa.status === "divulgado" &&
+      medalhasDoPodio(disputa.podio).some(({ escolaId }) => escolaId === escola))));
 }
 
 export function atualizarDisputa(dados, id, { status, podio, divulgadoEm }, atualizadoEm) {

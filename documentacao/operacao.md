@@ -22,7 +22,9 @@ Abra o [editor local](http://127.0.0.1:8080/editor/). Ele lê a cópia local de 
 3. Para registrar um jogo selecionado, clique em **Adicionar jogo em destaque**. Preencha horário, local e escolas à medida que forem confirmados. Para publicar um placar, informe as duas escolas e os dois números. O placar de 0 a 0 é válido.
 4. Clique em **Exportar campeonato.json**. O JSON baixado é a base revisada para publicar no GitHub.
 
-O quadro geral soma medalhas a partir dos pódios. Um placar de jogo em destaque não concede medalhas. Em provas individuais, atletas diferentes de uma mesma escola podem ocupar mais de uma posição. A Corrida pelo título recalcula no editor ao salvar alterações e suas estimativas ficam fora da exportação. A data registrada é exibida no fuso de Manaus.
+Quando o resultado oficial concede mais de uma medalha da mesma cor, preencha o pódio normalmente e use **Adicionar medalha excepcional** para selecionar o tipo e a escola de cada medalha extra. Para corrigir ou retirar uma medalha excepcional, altere os campos da linha ou clique em **Remover medalha** e salve o pódio.
+
+O quadro geral soma as medalhas de cada pódio, inclusive as excepcionais. Cada pódio encerra uma única disputa. Um placar de jogo em destaque não concede medalhas. Em provas individuais, atletas diferentes de uma mesma escola podem ocupar mais de uma posição. A Corrida pelo título considera um ouro por disputa futura confirmada e recalcula no editor ao salvar alterações. Suas estimativas ficam fora da exportação. A data registrada é exibida no fuso de Manaus.
 
 ## Publicar pelo GitHub
 

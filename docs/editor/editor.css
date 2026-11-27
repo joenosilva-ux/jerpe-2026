@@ -1,3 +1,5 @@
+.medalha-excepcional button { align-self: center; justify-self: start; }
+
 .resumo-corrida {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));

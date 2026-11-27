@@ -11,10 +11,13 @@ const situacao = porId("situacao");
 const formulario = porId("formulario");
 const salvar = porId("salvar");
 const exportar = porId("exportar");
+const listaMedalhasAdicionais = porId("medalhas-adicionais");
+const adicionarMedalha = porId("adicionar-medalha");
 const comparar = new Intl.Collator("pt-BR", { numeric: true }).compare;
 const nomesEstados = { ...estados, aguardando: "Confirmada · aguardando pódio" };
 let dados;
 let modalidades;
+let escolas;
 let disputaAtual;
 let modalidadeAnterior = "";
 let alteracoesExportaveis = false;
@@ -34,19 +37,47 @@ function mensagem(texto, tipo = "") {
   status.textContent = texto;
 }
 
+function inserirMedalhaAdicional({ tipo = "", escolaId = "" } = {}) {
+  const linha = porId("modelo-medalha").content.firstElementChild.cloneNode(true);
+  const campoTipo = linha.querySelector('[name="tipo-extra"]');
+  const campoEscola = linha.querySelector('[name="escola-extra"]');
+  campoTipo.value = tipo;
+  campoEscola.replaceChildren(new Option("Selecione uma escola", ""),
+    ...escolas.map((escola) => new Option(escola.nome, escola.id)));
+  campoEscola.value = escolaId;
+  linha.querySelector("button").addEventListener("click", () => {
+    linha.remove();
+    atualizarFormulario();
+    adicionarMedalha.focus();
+  });
+  listaMedalhasAdicionais.append(linha);
+  return campoTipo;
+}
+
 function valores() {
-  return {
-    status: situacao.value,
-    podio: situacao.value === "divulgado" ?
-      Object.fromEntries(medalhas.map((m) => [m, porId(m).value || null])) : null,
-  };
+  const status = situacao.value;
+  if (status !== "divulgado") return { status, podio: null };
+  const podio = Object.fromEntries(medalhas.map((m) => [m, porId(m).value || null]));
+  const adicionais = Array.from(listaMedalhasAdicionais.children, (linha) => ({
+    tipo: linha.querySelector('[name="tipo-extra"]').value,
+    escolaId: linha.querySelector('[name="escola-extra"]').value,
+  }));
+  if (adicionais.length) podio.medalhasAdicionais = adicionais;
+  return { status, podio };
 }
 
 function temRascunho() {
   if (!disputaAtual) return false;
   const { status, podio } = valores();
-  return status !== disputaAtual.status ||
-    (status === "divulgado" && medalhas.some((m) => podio[m] !== disputaAtual.podio?.[m]));
+  if (status !== disputaAtual.status) return true;
+  if (status !== "divulgado") return false;
+  const anterior = disputaAtual.podio;
+  const adicionais = podio.medalhasAdicionais ?? [];
+  const adicionaisAnteriores = anterior.medalhasAdicionais ?? [];
+  return medalhas.some((m) => podio[m] !== anterior[m]) ||
+    adicionais.length !== adicionaisAnteriores.length ||
+    adicionais.some(({ tipo, escolaId }, i) =>
+      tipo !== adicionaisAnteriores[i].tipo || escolaId !== adicionaisAnteriores[i].escolaId);
 }
 
 function atualizarFormulario() {
@@ -56,7 +87,7 @@ function atualizarFormulario() {
   salvar.disabled = !temRascunho();
   atualizarExportacao();
   porId("orientacao").textContent = exibirPodio ?
-    "Preencha 1º e 2º lugar. Deixe o bronze vazio se ele não foi concedido." :
+    "Preencha o 1º lugar. Deixe prata e bronze vazios se não foram concedidos." :
     disputaAtual?.status === "divulgado" ? "Ao salvar sem pódio, as medalhas serão retiradas do quadro geral." : "";
 }
 
@@ -64,9 +95,11 @@ function selecionarDisputa(id) {
   disputaAtual = dados.competicoes.find((item) => item.id === id);
   formulario.hidden = !disputaAtual;
   porId("fonte").textContent = "";
+  listaMedalhasAdicionais.replaceChildren();
   if (disputaAtual) {
     situacao.value = disputaAtual.status;
     for (const m of medalhas) porId(m).value = disputaAtual.podio?.[m] ?? "";
+    for (const medalha of disputaAtual.podio?.medalhasAdicionais ?? []) inserirMedalhaAdicional(medalha);
     porId("fonte").textContent = [disputaAtual.fonte, disputaAtual.observacao].filter(Boolean).join(" · ");
   }
   atualizarFormulario();
@@ -90,9 +123,9 @@ function carregar(dadosNovos, descricao) {
       .map((item) => new Option(item.nome, item.id)));
   modalidadeAnterior = "";
   situacao.replaceChildren(...Object.entries(nomesEstados).map(([id, nome]) => new Option(nome, id)));
-  const escolas = [...dados.escolas].sort((a, b) => comparar(a.nome, b.nome));
+  escolas = [...dados.escolas].sort((a, b) => comparar(a.nome, b.nome));
   for (const m of medalhas) {
-    porId(m).replaceChildren(new Option(m === "bronze" ? "Sem bronze" : "Selecione uma escola", ""),
+    porId(m).replaceChildren(new Option(m === "ouro" ? "Selecione uma escola" : `Sem ${m}`, ""),
       ...escolas.map((escola) => new Option(escola.nome, escola.id)));
   }
   alteracoesExportaveis = false;
@@ -151,6 +184,10 @@ disputa.addEventListener("change", () => {
     return;
   }
   selecionarDisputa(disputa.value);
+});
+adicionarMedalha.addEventListener("click", () => {
+  inserirMedalhaAdicional().focus();
+  atualizarFormulario();
 });
 formulario.addEventListener("change", atualizarFormulario);
 formulario.addEventListener("submit", (evento) => {
