@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Medalhas, pódios, jogos em destaque e cenários dos Jogos Escolares de Rio Preto da Eva.">
+  <meta name="description" content="Medalhas, pódios e jogos em destaque dos Jogos Escolares de Rio Preto da Eva.">
   <meta name="theme-color" content="#101a32">
   <title>VIII JERPE 2026 | Quadro de medalhas</title>
   <link rel="icon" href="./imagens/identidade/jerpe-2026.png">
@@ -22,7 +22,6 @@
         <a href="#medalhas">Medalhas</a>
         <a href="#jogos">Jogos</a>
         <a href="#podios">Pódios</a>
-        <a href="#simulador">Simular</a>
       </nav>
     </div>
   </header>
@@ -84,37 +83,6 @@
             <div id="jogos-pendentes" class="grupo-jogos"></div>
           </div>
         </div>
-      </section>
-      <section id="simulador" class="cartao catalogo" aria-labelledby="titulo-simulador">
-        <div class="secao-cabecalho">
-          <h2 id="titulo-simulador">Simulador de medalhas</h2>
-          <p>Adicione medalhas a uma escola e veja como ficaria a classificação. O cenário é hipotético e só aparece no seu navegador.</p>
-        </div>
-        <form id="form-simulacao" class="form-simulacao">
-          <label>Escola<select name="escola" id="escola-simulacao" required><option value="">Selecione uma escola</option></select></label>
-          <fieldset>
-            <legend>Medalhas a acrescentar</legend>
-            <div class="campos-podio">
-              <label class="ouro">Ouro<input type="number" inputmode="numeric" name="ouro" min="0" max="999" step="1" value="1"></label>
-              <label class="prata">Prata<input type="number" inputmode="numeric" name="prata" min="0" max="999" step="1" value="0"></label>
-              <label class="bronze">Bronze<input type="number" inputmode="numeric" name="bronze" min="0" max="999" step="1" value="0"></label>
-            </div>
-          </fieldset>
-          <div class="acoes">
-            <button class="principal" type="submit">Simular cenário</button>
-            <button type="reset">Limpar cenário</button>
-          </div>
-        </form>
-        <p id="resumo-simulacao" class="nota" role="status"></p>
-        <table id="quadro-simulacao" hidden>
-          <caption>Classificação simulada</caption>
-          <thead><tr>
-            <th scope="col">Pos.</th><th scope="col">Escola</th>
-            <th scope="col" class="ouro">Ouro</th><th scope="col" class="prata">Prata</th>
-            <th scope="col" class="bronze">Bronze</th><th scope="col">Total</th>
-          </tr></thead>
-          <tbody id="linhas-simulacao"></tbody>
-        </table>
       </section>
       <section id="podios" class="cartao catalogo" aria-labelledby="titulo-podios">
         <div class="secao-cabecalho">

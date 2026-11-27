@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
   agruparDestaques, atualizarDisputa, diaNoFuso, filtrarDisputas, lerCampeonato,
-  quadroDeMedalhas, removerDestaque, salvarDestaque, simularMedalhas, validar,
+  quadroDeMedalhas, removerDestaque, salvarDestaque, validar,
 } from "../docs/js/campeonato.mjs";
 
 const json = readFileSync(new URL("../docs/dados/campeonato.json", import.meta.url), "utf8");
@@ -60,7 +60,12 @@ test("valida escolas, IDs, pódio coletivo e entrada JSON", () => {
   assert.throws(() => lerCampeonato("{"), /JSON válido/);
   assert.throws(() => registrar(inicial, futsal, "desconhecida", segundo), /escola inexistente/);
   assert.throws(() => registrar(inicial, futsal, primeiro, primeiro), /pódio coletivo/);
-  assert.throws(() => registrar(inicial, futsal, primeiro, null), /1º e o 2º/);
+  assert.throws(() => registrar(inicial, futsal, null, segundo), /informe o 1º lugar/);
+  const semPrata = registrar(inicial, futsal, primeiro, null);
+  assert.deepEqual(quadroDeMedalhas(semPrata)[0], {
+    ...inicial.escolas.find((escola) => escola.id === primeiro),
+    ouro: 1, prata: 0, bronze: 0, total: 1, posicao: 1,
+  });
   assert.ok(validar({ ...inicial, escolas: [...inicial.escolas, inicial.escolas[0]] })
     .some((erro) => erro.includes("duplicado")));
 });
@@ -107,16 +112,4 @@ test("valida placar incompleto, escolas repetidas e data de jogo", () => {
   assert.throws(() => salvarDestaque(inicial, { ...jogo, escolaB: primeiro }, data), /diferentes/);
   assert.throws(() => salvarDestaque(inicial, { ...jogo, data: "2026-02-30" }, data), /data inválida/);
   assert.equal(diaNoFuso("America/Manaus", new Date("2026-11-26T03:59:00Z")), "2026-11-25");
-});
-
-test("cenário usa desempates do quadro atual e preserva os dados oficiais", () => {
-  const dados = registrar(inicial, futsal, primeiro, segundo);
-  const atual = quadroDeMedalhas(dados);
-  const cenario = simularMedalhas(atual, terceiro, { ouro: 1, prata: 0, bronze: 0 });
-  assert.deepEqual(cenario.slice(0, 2).map((e) => e.posicao), [1, 1]);
-  assert.equal(atual.find((e) => e.id === terceiro).total, 0);
-  assert.deepEqual(quadroDeMedalhas(dados), atual);
-  const lider = simularMedalhas(atual, segundo, { ouro: 1, prata: 0, bronze: 0 })[0];
-  assert.equal(lider.id, segundo);
-  assert.throws(() => simularMedalhas(atual, segundo, { ouro: -1, prata: 0, bronze: 0 }), /números inteiros/);
 });
