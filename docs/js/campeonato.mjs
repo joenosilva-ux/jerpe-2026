@@ -195,20 +195,6 @@ function classificar(linhas) {
   return quadro;
 }
 
-export function simularMedalhas(quadroAtual, escolaId, acrescimos) {
-  if (!quadroAtual.some((linha) => linha.id === escolaId)) throw new Error("Selecione uma escola.");
-  if (!medalhas.every((m) => placarValido(acrescimos[m]) && acrescimos[m] <= 999)) {
-    throw new Error("Use números inteiros de 0 a 999 para cada medalha.");
-  }
-  const linhas = quadroAtual.map((linha) => ({ ...linha, posicao: null }));
-  const escola = linhas.find((linha) => linha.id === escolaId);
-  for (const medalha of medalhas) {
-    escola[medalha] += acrescimos[medalha];
-    escola.total += acrescimos[medalha];
-  }
-  return classificar(linhas);
-}
-
 export function salvarDestaque(dados, jogo, agora) {
   const destaques = dados.destaques ?? [];
   const revista = { ...jogo, atualizadoEm: agora };

@@ -11,7 +11,7 @@ Painel independente para acompanhar os Jogos Escolares de Rio Preto da Eva, no A
 
 ## O que o projeto entrega
 
-- **Painel público.** Quadro de medalhas calculado a partir dos pódios, filtros por modalidade e escola, jogos em destaque e simulador de medalhas.
+- **Painel público.** Quadro de medalhas calculado a partir dos pódios, filtros por modalidade e escola e jogos em destaque.
 - **Editor no navegador.** Carregamento da base publicada, cadastro e correção de resultados, importação, validação e exportação da base completa.
 - **Corrida pelo título.** O editor mostra quantos ouros ainda estão disponíveis e quantos cada escola precisa para ultrapassar ou garantir a liderança em ouros.
 

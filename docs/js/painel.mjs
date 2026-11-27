@@ -1,6 +1,6 @@
 import {
   agruparDestaques, carregarCampeonato, dataLocal, detalhes, diaNoFuso, estados, filtrarDisputas,
-  medalhas, quadroDeMedalhas, simularMedalhas, tituloDisputa,
+  medalhas, quadroDeMedalhas, tituloDisputa,
 } from "./campeonato.mjs";
 
 const porId = (id) => document.getElementById(id);
@@ -13,11 +13,10 @@ function elemento(tag, texto, classe) {
   return node;
 }
 
-function preencherQuadro(tabela, quadro, destaque) {
+function preencherQuadro(tabela, quadro) {
   tabela.replaceChildren();
   for (const linha of quadro) {
     const tr = elemento("tr");
-    if (linha.id === destaque) tr.className = "escola-simulada";
     const escola = elemento("th", linha.nome);
     escola.scope = "row";
     tr.append(elemento("td", linha.posicao ?? "—", "posicao"), escola);
@@ -76,41 +75,6 @@ function exibirDestaques(dados, escolas, modalidades) {
     if (!jogos.length && vazios[nome]) lista.append(elemento("p", vazios[nome], "vazio"));
   }
   porId("jogos-sem-resultado").hidden = !grupos.pendentes.length;
-}
-
-function iniciarSimulador(quadro) {
-  const form = porId("form-simulacao");
-  const select = porId("escola-simulacao");
-  const resumo = porId("resumo-simulacao");
-  const tabela = porId("quadro-simulacao");
-  [...quadro].sort((a, b) => comparar(a.nome, b.nome))
-    .forEach((escola) => select.add(new Option(escola.nome, escola.id)));
-  const limpar = () => {
-    resumo.textContent = "";
-    tabela.hidden = true;
-  };
-  form.addEventListener("input", limpar);
-  form.addEventListener("reset", limpar);
-  form.addEventListener("submit", (evento) => {
-    evento.preventDefault();
-    const campos = new FormData(form);
-    const id = campos.get("escola");
-    const acrescimos = Object.fromEntries(medalhas.map((m) => [m, Number(campos.get(m))]));
-    try {
-      const simulado = simularMedalhas(quadro, id, acrescimos);
-      const atual = quadro.find((linha) => linha.id === id);
-      const futura = simulado.find((linha) => linha.id === id);
-      const empatada = futura.posicao && simulado.some((linha) => linha.id !== id && linha.posicao === futura.posicao);
-      const antes = atual.posicao ? `${atual.posicao}º lugar atual` : "sem posição atual";
-      const depois = futura.posicao ? `${futura.posicao}º lugar no cenário${empatada ? " (empate)" : ""}` : "sem posição no cenário";
-      resumo.textContent = `${atual.nome} · ${antes} · ${depois}`;
-      preencherQuadro(porId("linhas-simulacao"), simulado, id);
-      tabela.hidden = false;
-    } catch (erro) {
-      tabela.hidden = true;
-      resumo.textContent = erro.message;
-    }
-  });
 }
 
 function linhaPodio(disputa, escolas) {
@@ -173,7 +137,6 @@ function iniciar(dados) {
   const quadro = quadroDeMedalhas(dados);
   exibirQuadro(dados, quadro);
   exibirDestaques(dados, escolas, modalidades);
-  iniciarSimulador(quadro);
   exibirRecentes(divulgados, escolas, modalidades);
   for (const [id, itens] of [["modalidade", dados.modalidades], ["escola", dados.escolas]]) {
     const select = porId(id);
