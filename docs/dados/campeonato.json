@@ -5,7 +5,7 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-27T02:06:37.583104+00:00"
+    "atualizadoEm": "2026-11-27T04:59:12.346Z"
   },
   "destaques": [
     {
@@ -295,9 +295,12 @@
       "podio": {
         "ouro": "menino-jesus",
         "prata": "luiz-fernando",
-        "bronze": null
+        "bronze": "alegria-de-saber",
+        "medalhasAdicionais": [
+          { "tipo": "bronze", "escolaId": "ivanilde-braga" }
+        ]
       },
-      "observacao": "PDF registra dois terceiros lugares: Alegria de Saber e Ivanilde Braga. Bronze não lançado no campo único para evitar excluir arbitrariamente uma escola; requer confirmação ou suporte a empate.",
+      "observacao": "PDF registra dois terceiros lugares: Alegria de Saber e Ivanilde Braga.",
       "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
