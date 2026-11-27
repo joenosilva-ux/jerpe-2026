@@ -5,7 +5,7 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-27T05:35:55.599Z"
+    "atualizadoEm": "2026-11-27T15:15:00.000Z"
   },
   "destaques": [
     {
@@ -558,7 +558,10 @@
         "prata": "luiz-fernando",
         "bronze": "alegria-de-saber",
         "medalhasAdicionais": [
-          { "tipo": "bronze", "escolaId": "ivanilde-braga" }
+          {
+            "tipo": "bronze",
+            "escolaId": "ivanilde-braga"
+          }
         ]
       },
       "observacao": "PDF registra dois terceiros lugares: Alegria de Saber e Ivanilde Braga.",
@@ -801,9 +804,14 @@
       "nome": "Xadrez",
       "categoria": "infantil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Xadrez infantil",
-      "status": "aguardando",
-      "podio": null
+      "fonte": "Resultado informado pelo responsável pelo painel",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": "luiz-fernando",
+        "bronze": "gilberto-mestrinho"
+      },
+      "divulgadoEm": "2026-11-27T15:15:00.000Z"
     },
     {
       "id": "tenis-mesa-infantil-feminino",
@@ -822,9 +830,14 @@
       "nome": "Xadrez",
       "categoria": "infantil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Xadrez infantil",
-      "status": "aguardando",
-      "podio": null
+      "fonte": "Resultado informado pelo responsável pelo painel",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": "menino-jesus",
+        "bronze": "francisco-alves-da-costa"
+      },
+      "divulgadoEm": "2026-11-27T15:15:00.000Z"
     },
     {
       "id": "tenis-mesa-infantil-masculino",
@@ -843,9 +856,14 @@
       "nome": "Xadrez",
       "categoria": "juvenil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Xadrez juvenil",
-      "status": "aguardando",
-      "podio": null
+      "fonte": "Resultado informado pelo responsável pelo painel",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "menino-jesus",
+        "prata": "ivanilde-braga",
+        "bronze": "luis-alberto"
+      },
+      "divulgadoEm": "2026-11-27T15:15:00.000Z"
     },
     {
       "id": "tenis-mesa-juvenil-feminino",
@@ -864,9 +882,14 @@
       "nome": "Xadrez",
       "categoria": "juvenil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Xadrez juvenil",
-      "status": "aguardando",
-      "podio": null
+      "fonte": "Resultado informado pelo responsável pelo painel",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "gilberto-mestrinho",
+        "prata": "ivanilde-braga",
+        "bronze": "alegria-de-saber"
+      },
+      "divulgadoEm": "2026-11-27T15:15:00.000Z"
     },
     {
       "id": "tenis-mesa-juvenil-masculino",
