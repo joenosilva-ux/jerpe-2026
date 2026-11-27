@@ -5,7 +5,7 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-26T16:57:08.546171Z"
+    "atualizadoEm": "2026-11-27T01:35:50.523633+00:00"
   },
   "destaques": [
     {
@@ -58,6 +58,14 @@
     {
       "id": "luiz-fernando",
       "nome": "Luiz Fernando"
+    },
+    {
+      "id": "francisco-alves-da-costa",
+      "nome": "Francisco Alves da Costa"
+    },
+    {
+      "id": "francisco-de-assis",
+      "nome": "Francisco de Assis"
     }
   ],
   "modalidades": [
@@ -114,10 +122,15 @@
       "nome": "Futsal",
       "categoria": "unica",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Futsal feminino",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "Cadastro confirmado pela ficha. A programação e os confrontos ainda não constam no Boletim 01."
+      "fonte": "RESULTADOS.pdf — p. 1",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "menino-jesus",
+        "prata": null,
+        "bronze": null
+      },
+      "observacao": "PDF denomina a prova futsal infantil feminino; mantida a categoria única do cadastro existente.",
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "volei-unica-feminino",
@@ -206,15 +219,14 @@
       "nome": "80 m",
       "categoria": "infantil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Corridas infantil",
+      "fonte": "RESULTADOS.pdf — p. 3",
       "status": "divulgado",
       "podio": {
         "ouro": "luis-alberto",
-        "prata": null,
-        "bronze": null
+        "prata": "menino-jesus",
+        "bronze": "gilberto-mestrinho"
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-80m-infantil-masculino",
@@ -222,15 +234,14 @@
       "nome": "80 m",
       "categoria": "infantil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Corridas infantil",
+      "fonte": "RESULTADOS.pdf — p. 3",
       "status": "divulgado",
       "podio": {
         "ouro": "luis-alberto",
-        "prata": null,
-        "bronze": null
+        "prata": "alegria-de-saber",
+        "bronze": "luiz-fernando"
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-150m-infantil-feminino",
@@ -238,15 +249,14 @@
       "nome": "150 m",
       "categoria": "infantil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Corridas infantil",
+      "fonte": "RESULTADOS.pdf — p. 3",
       "status": "divulgado",
       "podio": {
         "ouro": "ivanilde-braga",
-        "prata": null,
-        "bronze": null
+        "prata": "francisco-alves-da-costa",
+        "bronze": "luis-alberto"
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-150m-infantil-masculino",
@@ -254,15 +264,14 @@
       "nome": "150 m",
       "categoria": "infantil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Corridas infantil",
+      "fonte": "RESULTADOS.pdf — p. 3",
       "status": "divulgado",
       "podio": {
         "ouro": "luis-alberto",
-        "prata": null,
-        "bronze": null
+        "prata": "luiz-fernando",
+        "bronze": "ivanilde-braga"
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-200m-infantil-feminino",
@@ -270,15 +279,14 @@
       "nome": "200 m",
       "categoria": "infantil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Corridas infantil",
+      "fonte": "RESULTADOS.pdf — p. 3",
       "status": "divulgado",
       "podio": {
-        "ouro": "menino-jesus",
-        "prata": null,
-        "bronze": null
+        "ouro": "alegria-de-saber",
+        "prata": "menino-jesus",
+        "bronze": "luis-alberto"
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-200m-infantil-masculino",
@@ -286,15 +294,15 @@
       "nome": "200 m",
       "categoria": "infantil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Corridas infantil",
+      "fonte": "RESULTADOS.pdf — p. 3",
       "status": "divulgado",
       "podio": {
-        "ouro": "gilberto-mestrinho",
-        "prata": null,
+        "ouro": "menino-jesus",
+        "prata": "luiz-fernando",
         "bronze": null
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "observacao": "PDF registra dois terceiros lugares: Alegria de Saber e Ivanilde Braga. Bronze não lançado no campo único para evitar excluir arbitrariamente uma escola; requer confirmação ou suporte a empate.",
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-salto-infantil-feminino",
@@ -302,15 +310,14 @@
       "nome": "Salto em distância",
       "categoria": "infantil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Salto em distância infantil",
+      "fonte": "RESULTADOS.pdf — p. 1",
       "status": "divulgado",
       "podio": {
         "ouro": "luis-alberto",
-        "prata": null,
-        "bronze": null
+        "prata": "ivanilde-braga",
+        "bronze": "francisco-alves-da-costa"
       },
-      "observacao": "Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-salto-infantil-masculino",
@@ -318,15 +325,14 @@
       "nome": "Salto em distância",
       "categoria": "infantil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Salto em distância infantil",
+      "fonte": "RESULTADOS.pdf — p. 1",
       "status": "divulgado",
       "podio": {
-        "ouro": "menino-jesus",
-        "prata": null,
-        "bronze": null
+        "ouro": "ivanilde-braga",
+        "prata": "menino-jesus",
+        "bronze": "alegria-de-saber"
       },
-      "observacao": "Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-dardo-infantil-feminino",
@@ -356,15 +362,15 @@
       "nome": "100 m",
       "categoria": "juvenil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "fonte": "RESULTADOS.pdf — p. 2",
       "status": "divulgado",
       "podio": {
         "ouro": "menino-jesus",
-        "prata": null,
-        "bronze": null
+        "prata": "ivanilde-braga",
+        "bronze": "luis-alberto"
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "observacao": "PDF rotula a prova como infantil; associada à categoria juvenil pelas distâncias e pelo Boletim 01. Conferir com a organização.",
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-100m-juvenil-masculino",
@@ -372,15 +378,15 @@
       "nome": "100 m",
       "categoria": "juvenil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "fonte": "RESULTADOS.pdf — p. 2",
       "status": "divulgado",
       "podio": {
         "ouro": "luis-alberto",
-        "prata": null,
-        "bronze": null
+        "prata": "alegria-de-saber",
+        "bronze": "gilberto-mestrinho"
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "observacao": "PDF rotula a prova como infantil; associada à categoria juvenil pelas distâncias e pelo Boletim 01. Conferir com a organização.",
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-200m-juvenil-feminino",
@@ -388,15 +394,15 @@
       "nome": "200 m",
       "categoria": "juvenil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "fonte": "RESULTADOS.pdf — p. 2",
       "status": "divulgado",
       "podio": {
         "ouro": "menino-jesus",
-        "prata": null,
+        "prata": "luis-alberto",
         "bronze": null
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "observacao": "PDF rotula a prova como infantil; associada à categoria juvenil pelas distâncias e pelo Boletim 01. Conferir com a organização. Bronze não informado no PDF.",
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-200m-juvenil-masculino",
@@ -404,15 +410,15 @@
       "nome": "200 m",
       "categoria": "juvenil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "fonte": "RESULTADOS.pdf — p. 2",
       "status": "divulgado",
       "podio": {
         "ouro": "luis-alberto",
-        "prata": null,
-        "bronze": null
+        "prata": "menino-jesus",
+        "bronze": "luiz-fernando"
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "observacao": "PDF rotula a prova como infantil; associada à categoria juvenil pelas distâncias e pelo Boletim 01. Conferir com a organização.",
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-400m-juvenil-feminino",
@@ -420,15 +426,15 @@
       "nome": "400 m",
       "categoria": "juvenil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "fonte": "RESULTADOS.pdf — p. 2",
       "status": "divulgado",
       "podio": {
         "ouro": "luis-alberto",
-        "prata": null,
+        "prata": "menino-jesus",
         "bronze": null
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "observacao": "PDF rotula a prova como infantil; associada à categoria juvenil pelas distâncias e pelo Boletim 01. Conferir com a organização. Bronze não informado no PDF.",
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-400m-juvenil-masculino",
@@ -436,15 +442,15 @@
       "nome": "400 m",
       "categoria": "juvenil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Corridas juvenil",
+      "fonte": "RESULTADOS.pdf — p. 2",
       "status": "divulgado",
       "podio": {
         "ouro": "ivanilde-braga",
-        "prata": null,
-        "bronze": null
+        "prata": "gilberto-mestrinho",
+        "bronze": "luis-alberto"
       },
-      "observacao": "Categoria identificada pelo cabeçalho e pelas distâncias da ficha. Os dois nomes de arquivo estão trocados. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "observacao": "PDF rotula a prova como infantil; associada à categoria juvenil pelas distâncias e pelo Boletim 01. Conferir com a organização.",
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-salto-juvenil-feminino",
@@ -452,15 +458,14 @@
       "nome": "Salto em distância",
       "categoria": "juvenil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Salto em distância juvenil",
+      "fonte": "RESULTADOS.pdf — p. 1",
       "status": "divulgado",
       "podio": {
         "ouro": "menino-jesus",
-        "prata": null,
-        "bronze": null
+        "prata": "alegria-de-saber",
+        "bronze": "luis-alberto"
       },
-      "observacao": "Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-salto-juvenil-masculino",
@@ -468,15 +473,14 @@
       "nome": "Salto em distância",
       "categoria": "juvenil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Salto em distância juvenil",
+      "fonte": "RESULTADOS.pdf — p. 1",
       "status": "divulgado",
       "podio": {
         "ouro": "menino-jesus",
-        "prata": null,
-        "bronze": null
+        "prata": "luis-alberto",
+        "bronze": "francisco-de-assis"
       },
-      "observacao": "Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-dardo-juvenil-feminino",
@@ -506,15 +510,14 @@
       "nome": "Revezamento 4×100 m",
       "categoria": "juvenil",
       "naipe": "misto",
-      "fonte": "Regulamento VIII JERPE 2026 — Art. 27, alínea a",
+      "fonte": "RESULTADOS.pdf — p. 1",
       "status": "divulgado",
       "podio": {
         "ouro": "luis-alberto",
-        "prata": null,
-        "bronze": null
+        "prata": "alegria-de-saber",
+        "bronze": "menino-jesus"
       },
-      "observacao": "Disputa mista confirmada pelo responsável pelo painel conforme Art. 27. Fichas anteriores apresentavam divergência de naipe. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "atletismo-4x80-infantil-misto",
@@ -522,15 +525,14 @@
       "nome": "Revezamento 4×80 m",
       "categoria": "infantil",
       "naipe": "misto",
-      "fonte": "Regulamento VIII JERPE 2026 — Art. 27, alínea a; ficha de inscrição",
+      "fonte": "RESULTADOS.pdf — p. 1",
       "status": "divulgado",
       "podio": {
-        "ouro": "luis-alberto",
-        "prata": null,
-        "bronze": null
+        "ouro": "menino-jesus",
+        "prata": "alegria-de-saber",
+        "bronze": "francisco-alves-da-costa"
       },
-      "observacao": "Disputa mista confirmada pelo responsável pelo painel conforme Art. 27. A ficha anterior apresentava cabeçalho divergente. Resultado parcial: prata e bronze não informados.",
-      "divulgadoEm": "2026-11-26T12:32:00-04:00"
+      "divulgadoEm": "2026-11-27T01:35:50.523633+00:00"
     },
     {
       "id": "xadrez-infantil-feminino",
