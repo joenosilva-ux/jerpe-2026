@@ -5,7 +5,7 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-27T15:15:00.000Z"
+    "atualizadoEm": "2026-11-28T00:05:00.000Z"
   },
   "destaques": [
     {
@@ -323,6 +323,10 @@
     {
       "id": "francisco-alves-da-costa",
       "nome": "Francisco Alves da Costa"
+    },
+    {
+      "id": "lorena-cordeiro",
+      "nome": "Lorena Cordeiro"
     }
   ],
   "modalidades": [
@@ -436,9 +440,15 @@
       "nome": "Vôlei de praia",
       "categoria": "infantil",
       "naipe": "feminino",
-      "fonte": "Boletim 01, p. 4",
-      "status": "aguardando",
-      "podio": null
+      "fonte": "RESULTADOS 2.doc — p. 7",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "menino-jesus",
+        "prata": "luis-alberto",
+        "bronze": null
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z",
+      "observacao": "Bronze não informado no documento."
     },
     {
       "id": "volei-praia-infantil-masculino",
@@ -446,9 +456,14 @@
       "nome": "Vôlei de praia",
       "categoria": "infantil",
       "naipe": "masculino",
-      "fonte": "Boletim 01, p. 4",
-      "status": "aguardando",
-      "podio": null
+      "fonte": "RESULTADOS 2.doc — p. 7–8",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": "ivanilde-braga",
+        "bronze": "menino-jesus"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "volei-praia-juvenil-feminino",
@@ -456,9 +471,14 @@
       "nome": "Vôlei de praia",
       "categoria": "juvenil",
       "naipe": "feminino",
-      "fonte": "Boletim 01, p. 3",
-      "status": "aguardando",
-      "podio": null
+      "fonte": "RESULTADOS 2.doc — p. 8",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "alegria-de-saber",
+        "prata": "gilberto-mestrinho",
+        "bronze": "menino-jesus"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "volei-praia-juvenil-masculino",
@@ -466,9 +486,14 @@
       "nome": "Vôlei de praia",
       "categoria": "juvenil",
       "naipe": "masculino",
-      "fonte": "Boletim 01, p. 3",
-      "status": "aguardando",
-      "podio": null
+      "fonte": "RESULTADOS 2.doc — p. 9",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "alegria-de-saber",
+        "prata": "menino-jesus",
+        "bronze": "luis-alberto"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "atletismo-80m-infantil-feminino",
@@ -603,10 +628,14 @@
       "nome": "Lançamento de dardo",
       "categoria": "infantil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Lançamento de dardo infantil",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "Prova adiada em 26/11/2026; nova data não informada."
+      "fonte": "RESULTADOS 2.doc — p. 10",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "luiz-fernando",
+        "prata": "luis-alberto",
+        "bronze": "lorena-cordeiro"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "atletismo-dardo-infantil-masculino",
@@ -614,10 +643,14 @@
       "nome": "Lançamento de dardo",
       "categoria": "infantil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Lançamento de dardo infantil",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "Prova adiada em 26/11/2026; nova data não informada."
+      "fonte": "RESULTADOS 2.doc — p. 11",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": "menino-jesus",
+        "bronze": "luiz-fernando"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "atletismo-100m-juvenil-feminino",
@@ -752,10 +785,14 @@
       "nome": "Lançamento de dardo",
       "categoria": "juvenil",
       "naipe": "feminino",
-      "fonte": "Ficha de inscrição — Lançamento de dardo juvenil",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "Prova adiada em 26/11/2026; nova data não informada."
+      "fonte": "RESULTADOS 2.doc — p. 11",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "menino-jesus",
+        "prata": "luis-alberto",
+        "bronze": "alegria-de-saber"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "atletismo-dardo-juvenil-masculino",
@@ -763,10 +800,14 @@
       "nome": "Lançamento de dardo",
       "categoria": "juvenil",
       "naipe": "masculino",
-      "fonte": "Ficha de inscrição — Lançamento de dardo juvenil",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "Prova adiada em 26/11/2026; nova data não informada."
+      "fonte": "RESULTADOS 2.doc — p. 12",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": "menino-jesus",
+        "bronze": "ivanilde-braga"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "atletismo-4x100-juvenil-misto",
@@ -804,14 +845,14 @@
       "nome": "Xadrez",
       "categoria": "infantil",
       "naipe": "feminino",
-      "fonte": "Resultado informado pelo responsável pelo painel",
+      "fonte": "RESULTADOS 2.doc — p. 1",
       "status": "divulgado",
       "podio": {
         "ouro": "luis-alberto",
         "prata": "luiz-fernando",
         "bronze": "gilberto-mestrinho"
       },
-      "divulgadoEm": "2026-11-27T15:15:00.000Z"
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "tenis-mesa-infantil-feminino",
@@ -819,10 +860,14 @@
       "nome": "Tênis de mesa",
       "categoria": "infantil",
       "naipe": "feminino",
-      "fonte": "Confirmação do responsável pelo painel",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "Disputa confirmada por orientação do responsável pelo painel. A ficha contém um cabeçalho de xadrez infantil."
+      "fonte": "RESULTADOS 2.doc — p. 4",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "alegria-de-saber",
+        "prata": "menino-jesus",
+        "bronze": "luis-alberto"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "xadrez-infantil-masculino",
@@ -830,14 +875,14 @@
       "nome": "Xadrez",
       "categoria": "infantil",
       "naipe": "masculino",
-      "fonte": "Resultado informado pelo responsável pelo painel",
+      "fonte": "RESULTADOS 2.doc — p. 2",
       "status": "divulgado",
       "podio": {
-        "ouro": "luis-alberto",
-        "prata": "menino-jesus",
-        "bronze": "francisco-alves-da-costa"
+        "ouro": "menino-jesus",
+        "prata": "francisco-alves-da-costa",
+        "bronze": "luiz-fernando"
       },
-      "divulgadoEm": "2026-11-27T15:15:00.000Z"
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "tenis-mesa-infantil-masculino",
@@ -845,10 +890,14 @@
       "nome": "Tênis de mesa",
       "categoria": "infantil",
       "naipe": "masculino",
-      "fonte": "Confirmação do responsável pelo painel",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "Disputa confirmada por orientação do responsável pelo painel. A ficha contém um cabeçalho de xadrez infantil."
+      "fonte": "RESULTADOS 2.doc — p. 5",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "luis-alberto",
+        "prata": "gilberto-mestrinho",
+        "bronze": "alegria-de-saber"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "xadrez-juvenil-feminino",
@@ -856,14 +905,14 @@
       "nome": "Xadrez",
       "categoria": "juvenil",
       "naipe": "feminino",
-      "fonte": "Resultado informado pelo responsável pelo painel",
+      "fonte": "RESULTADOS 2.doc — p. 3",
       "status": "divulgado",
       "podio": {
         "ouro": "menino-jesus",
         "prata": "ivanilde-braga",
         "bronze": "luis-alberto"
       },
-      "divulgadoEm": "2026-11-27T15:15:00.000Z"
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "tenis-mesa-juvenil-feminino",
@@ -871,10 +920,14 @@
       "nome": "Tênis de mesa",
       "categoria": "juvenil",
       "naipe": "feminino",
-      "fonte": "Confirmação do responsável pelo painel",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "Disputa confirmada por orientação do responsável pelo painel. A ficha contém um cabeçalho de xadrez infantil."
+      "fonte": "RESULTADOS 2.doc — p. 5",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "gilberto-mestrinho",
+        "prata": "luis-alberto",
+        "bronze": "menino-jesus"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "xadrez-juvenil-masculino",
@@ -882,14 +935,14 @@
       "nome": "Xadrez",
       "categoria": "juvenil",
       "naipe": "masculino",
-      "fonte": "Resultado informado pelo responsável pelo painel",
+      "fonte": "RESULTADOS 2.doc — p. 3",
       "status": "divulgado",
       "podio": {
-        "ouro": "gilberto-mestrinho",
-        "prata": "ivanilde-braga",
+        "ouro": "ivanilde-braga",
+        "prata": "gilberto-mestrinho",
         "bronze": "alegria-de-saber"
       },
-      "divulgadoEm": "2026-11-27T15:15:00.000Z"
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
       "id": "tenis-mesa-juvenil-masculino",
@@ -897,10 +950,14 @@
       "nome": "Tênis de mesa",
       "categoria": "juvenil",
       "naipe": "masculino",
-      "fonte": "Confirmação do responsável pelo painel",
-      "status": "aguardando",
-      "podio": null,
-      "observacao": "Disputa confirmada por orientação do responsável pelo painel. A ficha contém um cabeçalho de xadrez infantil."
+      "fonte": "RESULTADOS 2.doc — p. 6",
+      "status": "divulgado",
+      "podio": {
+        "ouro": "gilberto-mestrinho",
+        "prata": "menino-jesus",
+        "bronze": "ivanilde-braga"
+      },
+      "divulgadoEm": "2026-11-28T00:05:00.000Z"
     }
   ]
 }
