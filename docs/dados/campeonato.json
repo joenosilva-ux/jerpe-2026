@@ -5,7 +5,7 @@
     "ano": 2026,
     "local": "Rio Preto da Eva · AM",
     "fuso": "America/Manaus",
-    "atualizadoEm": "2026-11-28T13:48:00Z"
+    "atualizadoEm": "2026-11-28T15:35:39.432566+00:00"
   },
   "destaques": [
     {
@@ -366,9 +366,9 @@
       "tipo": "individual"
     },
     {
-      "id": "garoto-garota",
-      "nome": "Garoto e Garota JERPE",
-      "tipo": "individual"
+      "id": "casal-jerpe",
+      "nome": "Casal JERPE",
+      "tipo": "coletiva"
     }
   ],
   "competicoes": [
@@ -990,34 +990,19 @@
       "divulgadoEm": "2026-11-28T00:05:00.000Z"
     },
     {
-      "id": "garoto-garota-unica-masculino",
-      "modalidadeId": "garoto-garota",
-      "nome": "Garoto JERPE",
+      "id": "casal-jerpe-unica-misto",
+      "modalidadeId": "casal-jerpe",
+      "nome": "Casal JERPE 2026",
       "categoria": "unica",
-      "naipe": "masculino",
-      "fonte": "RESULTADOS 2.doc — p. 13–14",
+      "naipe": "misto",
+      "fonte": "Resultados informados em 28/11/2026",
       "status": "divulgado",
       "podio": {
-        "ouro": "francisco-alves-da-costa",
+        "ouro": "alegria-de-saber",
         "prata": "menino-jesus",
-        "bronze": "gilberto-mestrinho"
-      },
-      "divulgadoEm": "2026-11-28T13:48:00Z"
-    },
-    {
-      "id": "garoto-garota-unica-feminino",
-      "modalidadeId": "garoto-garota",
-      "nome": "Garota JERPE",
-      "categoria": "unica",
-      "naipe": "feminino",
-      "fonte": "RESULTADOS 2.doc — p. 14",
-      "status": "divulgado",
-      "podio": {
-        "ouro": "menino-jesus",
-        "prata": "francisco-alves-da-costa",
         "bronze": "luis-alberto"
       },
-      "divulgadoEm": "2026-11-28T13:48:00Z"
+      "divulgadoEm": "2026-11-28T15:35:39.432566+00:00"
     }
   ]
 }
